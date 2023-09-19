@@ -7,3 +7,7 @@
 
 # Investigación
 
+# Roles de trabajo
+
+* Gael y Antonio. Trabajar en el Frontend 
+* Mike y Mario. Trabajar en el Backend
