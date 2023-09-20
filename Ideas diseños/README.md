@@ -5,4 +5,5 @@ nuestra pagina web.
 # Recursos Online
 * https://www.pexels.com/es-es/  Imagenes sin copyright.
 * https://www.flaticon.es/ Iconos PNG para la pagina.
-
+* https://xsgames.co/animatiss/ Animaciones CSS 
+* https://animatedbackgrounds.me/ Fondos animados CSS  
