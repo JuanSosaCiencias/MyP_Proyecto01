@@ -1,37 +1,40 @@
 
-$(document).ready($("#entradaCiudad").fadeIn(0))
-
 $(document).ready(function () {
-    $("#btnCiudad").on("click", function () {
-        $("#entradaCoordenadas").css("display", "none");
-        $("#entradaTicket").css("display", "none");
 
-        $("#entradaCiudad").fadeIn(700);
-    }).change();
-})
+    $("#entradaTicket").hide();
+    $("#entradaCoordenadas").hide();
+    $("#entradaCiudad").show();
 
-$(document).ready(function () {
-    $("#btnTicket").on("click", function () {
-        $("#entradaCoordenadas").css("display", "none");
-        $("#entradaCiudad").css("display", "none");
+    /**
+     * Oculta los dos primeros elementos recibidos y muestra en 
+     * pantalla el del 3er parametro
+     * @param {*} ocultar1 id de un div a ocultar
+     * @param {*} ocultar2 id de un div a ocultar
+     * @param {*} mostrar  id de un div a mostrar
+     */
+    function ocultarYMostrarDiv(ocultar1, ocultar2, mostrar) {
+        $(ocultar1).css("display", "none");
+        $(ocultar2).css("display", "none");
+        $(mostrar).fadeIn(700);
+    }
 
-        $("#entradaTicket").fadeIn(700);
-    }).change();
-})
+    $("#btnCiudad").click(function () {
+        ocultarYMostrarDiv("#entradaTicket", "#entradaCoordenadas", "#entradaCiudad");
+    });
+
+    $("#btnTicket").click(function () {
+        ocultarYMostrarDiv("#entradaCoordenadas", "#entradaCiudad", "#entradaTicket")
+    })
+
+    $("#btnCoordenadas").click(function () {
+        ocultarYMostrarDiv("#entradaTicket", "#entradaCiudad", "#entradaCoordenadas")
+    })
 
 
-$(document).ready(function () {
-    $("#btnCoordenadas").on("click", function () {
-        $("#entradaCiudad").css("display", "none");
-        $("#entradaTicket").css("display", "none");
-
-        $("#entradaCoordenadas").fadeIn(700);
-    }).change();
-})
-
-
-
-
+    document.addEventListener('DOMContentLoaded', e => {
+        $('.entradaCiudad').autocomplete();
+    }, false);
+});
 
 
 

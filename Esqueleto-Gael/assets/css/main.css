@@ -13,10 +13,6 @@ div {
   border: 2px solid black;
 }
 
-.modoSeleccion {
-  display: none;
-}
-
 .contenedorPadre {
   bottom: 30%;
 }

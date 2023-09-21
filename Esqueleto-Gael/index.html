@@ -34,16 +34,6 @@
 
 <body>
 
-  <nav class="navbar bg-black">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
-          class="d-inline-block align-text-top">
-      </a>
-    </div>
-  </nav>
-
-
   <div class="container px-4 rounded p-2 text-light border border-black rounded" style="margin-top: 80px;">
 
     <div class="row text-center p-2 m-2">
@@ -74,35 +64,43 @@
 
       </div>
 
-      <div class="col text-center text-light modoSeleccion" id="entradaCiudad">
+      <div class="col text-center text-light" id="entradaCiudad">
         <div class="m-2 p-2">
           <form>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label text-light">
                 <p id="textoModoSeleccion">Ciudad de origen</p>
               </label>
-              <input type="email" class="form-control" aria-describedby="emailHelp">
+              <input type="text" class="form-control entradaCiudad" list="ciudades">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label text-light">
                 <p id="textoModoSeleccion">Ciudad de destino</p>
               </label>
-              <input type="email" class="form-control" aria-describedby="emailHelp">
+              <input type="text" class="form-control entradaCiudad" list="ciudades">
             </div>
             <button type="submit" class="btn btn-dark btn-lg text-light"> Enviar </button>
+
+            <datalist class="list" id="ciudades">
+              <!--Aqui puede ir codidgo de flask para agregar más opciones-->
+              <option class="optio"> cdmx </option>
+              <option class="optio"> monterrey </option>
+              <option class="optio"> toluca </option>
+            </datalist>
+
           </form>
         </div>
       </div>
 
 
-      <div class="col text-center text-light modoSeleccion" id="entradaTicket">
+      <div class="col text-center text-light" id="entradaTicket">
         <div class="m-2 p-2">
           <form>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label text-light">
                 <p id="textoModoSeleccion">Ticket</p>
               </label>
-              <input type="email" class="form-control" aria-describedby="emailHelp">
+              <input type="text" class="form-control">
             </div>
             <button type="submit" class="btn btn-dark btn-lg text-light"> Enviar </button>
           </form>
@@ -110,20 +108,20 @@
       </div>
 
 
-      <div class="col text-center text-light modoSeleccion" id="entradaCoordenadas">
+      <div class="col text-center text-light" id="entradaCoordenadas">
         <div class="m-2 p-2">
           <form>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label text-light">
                 <p id="textoModoSeleccion">Latitud</p>
               </label>
-              <input type="email" class="form-control" aria-describedby="emailHelp">
+              <input type="text" class="form-control">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label text-light">
                 <p id="textoModoSeleccion">Longitud</p>
               </label>
-              <input type="email" class="form-control" aria-describedby="emailHelp">
+              <input type="text" class="form-control">
             </div>
             <button type="submit" class="btn btn-dark btn-lg text-light"> Enviar </button>
           </form>
