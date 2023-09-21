@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Encabezado común -->
+</head>
+<body>
+    <h1>Información de la Ciudad</h1>
+    <ul>
+        {% for row in ciudad_info %}
+            <li>Número de Ticket: {{ row.num_ticket }}, Origen: {{ row.origin }}, Destino: {{ row.destination }}</li>
+            <!-- Otras propiedades del ticket -->
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

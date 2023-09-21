@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>Datos del Ticket o Ruta</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Número de Ticket</th>
+                <th>Ciudad de Origen</th>
+                <th>Ciudad de Destino</th>
+                <th>Origen Latitud</th>
+                <th>Origen Longitud</th>
+                <th>Destino Latitud</th>
+                <th>Destino Longitud</th>
+                <th>Temperatura Origen</th>
+                <th>Temperatura Destino</th>
+                <th>Humedad Origen</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for dato in datos %}
+                <tr>
+                    <td>{{ dato.num_ticket }}</td>
+                    <td>{{ dato.origin }}</td>
+                    <td>{{ dato.destination }}</td>
+                    <td>{{ dato.origin_latitude }}</td>
+                    <td>{{ dato.origin_longitude }}</td>
+                    <td>{{ dato.destination_latitude }}</td>
+                    <td>{{ dato.destination_longitude }}</td>
+                    <td>{{ dato.temperatura_origen }}</td>
+                    <td>{{ dato.temperatura_destino }}</td>
+                    <td>{{ dato.humedad_origen }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+
