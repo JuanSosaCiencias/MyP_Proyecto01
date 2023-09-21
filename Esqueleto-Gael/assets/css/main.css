@@ -8,14 +8,35 @@ p {
   font-size: 30px;
 }
 
-#informacionClima {}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 970px;
-  }
-}
 
 div {
   border: 2px solid black;
+}
+
+.modoSeleccion {
+  display: none;
+}
+
+.contenedorPadre {
+  bottom: 30%;
+}
+
+
+/* https://stackoverflow.com/questions/22196587/how-to-vertically-center-a-container-in-bootstrap 
+docuemntar este comentario de stack overflow */
+
+.centrar {
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+
+#imagenClima {
+  width: 100px;
+  height: 100px;
 }

@@ -15,6 +15,9 @@
 
   <!-- jQuery -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Hoja de estilos personalizada-->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -36,7 +39,6 @@
       <a class="navbar-brand" href="#">
         <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
           class="d-inline-block align-text-top">
-        Web App
       </a>
     </div>
   </nav>
@@ -72,12 +74,54 @@
 
       </div>
 
-      <div class="col text-center text-light" id="opcionBusqueda">
+      <div class="col text-center text-light modoSeleccion" id="entradaCiudad">
         <div class="m-2 p-2">
           <form>
-            <div class="mb-3" id="inputModoSeleccion_1">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label text-light">
+                <p id="textoModoSeleccion">Ciudad de origen</p>
+              </label>
+              <input type="email" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label text-light">
                 <p id="textoModoSeleccion">Ciudad de destino</p>
+              </label>
+              <input type="email" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-dark btn-lg text-light"> Enviar </button>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="col text-center text-light modoSeleccion" id="entradaTicket">
+        <div class="m-2 p-2">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label text-light">
+                <p id="textoModoSeleccion">Ticket</p>
+              </label>
+              <input type="email" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-dark btn-lg text-light"> Enviar </button>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="col text-center text-light modoSeleccion" id="entradaCoordenadas">
+        <div class="m-2 p-2">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label text-light">
+                <p id="textoModoSeleccion">Latitud</p>
+              </label>
+              <input type="email" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label text-light">
+                <p id="textoModoSeleccion">Longitud</p>
               </label>
               <input type="email" class="form-control" aria-describedby="emailHelp">
             </div>
@@ -90,7 +134,7 @@
 
 
 
-    <script src="assets/css/scritp.js">  </script>
+    <script src="assets/css/mostrarForms.js">  </script>
 
 </body>
 
