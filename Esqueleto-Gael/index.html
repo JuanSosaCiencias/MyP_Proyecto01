@@ -57,7 +57,6 @@
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
               <button type="button" class="btn btn-danger btn-lg" id="btnCiudad">Ciudad</button>
               <button type="button" class="btn btn-warning btn-lg" id="btnTicket">Ticket</button>
-              <button type="button" class="btn btn-success btn-lg" id="btnCoordenadas">Coordenadas</button>
             </div>
           </div>
         </div>
@@ -66,18 +65,24 @@
 
       <div class="col text-center text-light" id="entradaCiudad">
         <div class="m-2 p-2">
-          <form>
+          <form class="needs-validation" novalidate>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label text-light">
                 <p id="textoModoSeleccion">Ciudad de origen</p>
               </label>
-              <input type="text" class="form-control entradaCiudad" list="ciudades">
+              <input type="text" class="form-control entradaCiudad" list="ciudades" required>
+              <div class="invalid-feedback">
+                Ingresa una ciudad de origen
+              </div>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label text-light">
                 <p id="textoModoSeleccion">Ciudad de destino</p>
               </label>
-              <input type="text" class="form-control entradaCiudad" list="ciudades">
+              <input type="text" class="form-control entradaCiudad" list="ciudades" required>
+              <div class="invalid-feedback">
+                Ingresa una ciudad de destino
+              </div>
             </div>
             <button type="submit" class="btn btn-dark btn-lg text-light"> Enviar </button>
 
@@ -95,33 +100,15 @@
 
       <div class="col text-center text-light" id="entradaTicket">
         <div class="m-2 p-2">
-          <form>
+          <form class="needs-validation" novalidate>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label text-light">
                 <p id="textoModoSeleccion">Ticket</p>
               </label>
-              <input type="text" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-dark btn-lg text-light"> Enviar </button>
-          </form>
-        </div>
-      </div>
-
-
-      <div class="col text-center text-light" id="entradaCoordenadas">
-        <div class="m-2 p-2">
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label text-light">
-                <p id="textoModoSeleccion">Latitud</p>
-              </label>
-              <input type="text" class="form-control">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label text-light">
-                <p id="textoModoSeleccion">Longitud</p>
-              </label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" required>
+              <div class="invalid-feedback">
+                Ingresa tu número de ticket
+              </div>
             </div>
             <button type="submit" class="btn btn-dark btn-lg text-light"> Enviar </button>
           </form>
@@ -133,6 +120,7 @@
 
 
     <script src="assets/css/mostrarForms.js">  </script>
+    <script src="assets/css/validarForms.js">  </script>
 
 </body>
 
