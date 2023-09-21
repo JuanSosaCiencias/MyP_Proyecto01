@@ -7,3 +7,5 @@ nuestra pagina web.
 * https://www.flaticon.es/ Iconos PNG para la pagina.
 * https://xsgames.co/animatiss/ Animaciones CSS 
 * https://animatedbackgrounds.me/ Fondos animados CSS  
+* https://fonts.google.com/   Fuentes de texto gratuitas para pagina web.
+* https://acorn.firefox.com/latest/acorn-aRSAh0Sp Diseno de componentes de pagina web
