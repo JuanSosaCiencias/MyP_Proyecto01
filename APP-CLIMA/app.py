@@ -5,11 +5,23 @@ app = Flask(__name__)
 mysql = MySQL(app)
 
 
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "m26p12c04"
-app.config["MYSQL_DB"] = "db_clima"
+app.config["MYSQL_HOST"] = "----"
+app.config["MYSQL_USER"] = "----"
+app.config["MYSQL_PASSWORD"] = "-----"
+app.config["MYSQL_DB"] = "-----"
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
+ 
+
+
+
+
+"""
+    Ruta de inicio de la aplicación.
+
+    :return: Renderiza el template "index.html" con un mensaje a la conexión a la base de datos.
+    :rtype: str
+
+"""
 
 @app.route("/")
 def index():
@@ -25,34 +37,55 @@ def index():
 
     return render_template("index.html", mensaje=mensaje)
 
-@app.route("/autocompletador",methods=["POST","GET"])
-def autocompletador():
-    buscador = request.form.get("text")
-    cursor = mysql.connection.cursor()
-    query = "select num_ticket from dataset where num_ticket LIKE '{}%' Limit 10".format(buscador)
-    cursor.execute(query)
-    result = cursor.fetchall()
-    return jsonify(result)
+
+"""
+    Ruta para realizar autocompletado de ciudades de origen.
+
+    :param str text: Texto de búsqueda.
+    :return: Respuesta JSON con resultados de autocompletado.
+    :rtype: dict
+"""
 
 @app.route("/autocompletadorOrigen", methods=["POST", "GET"])
 def autocompletadorOrigen():
     buscador = request.form.get("text")
     cursor = mysql.connection.cursor()
-    query = "SELECT DISTINCT origin FROM dataset WHERE origin LIKE '{}%' LIMIT 10".format(buscador)
+    query = "SELECT DISTINCT origin FROM dataset WHERE origin LIKE '{}%' LIMIT 6".format(buscador)
     cursor.execute(query)
     result = cursor.fetchall()
     return jsonify(result)
+
+
+
+"""
+    Ruta para realizar autocompletado de ciudades de destino.
+
+    :param str text: Texto de búsqueda.
+    :return: Respuesta JSON con resultados de autocompletado.
+    :rtype: dict
+
+"""
 
 @app.route("/autocompletadorDestino",methods=["POST","GET"])
 def autocompletadorDestino():
     buscador = request.form.get("text")
     cursor = mysql.connection.cursor()
-    query = "SELECT  DISTINCT destination FROM dataset WHERE destination LIKE '{}%' LIMIT 5".format(buscador)
+    query = "SELECT  DISTINCT destination FROM dataset WHERE destination LIKE '{}%' LIMIT 6".format(buscador)
     cursor.execute(query)
     result = cursor.fetchall()
     return jsonify(result)
 
 
+
+"""
+    Ruta para mostrar datos de acuerdo a la búsqueda.
+
+    :param str num_ticket: Número de ticket a buscar.
+    :param str ciudad_origen: Ciudad de origen a buscar.
+    :param str ciudad_destino: Ciudad de destino a buscar.
+    :return: Renderiza el template "mostrar_datos.html" con los resultados de la búsqueda.
+    :rtype: str
+"""
 @app.route("/mostrar_datos", methods=["POST"])
 def mostrar_datos():
     num_ticket = request.form.get("num_ticket")
@@ -67,6 +100,11 @@ def mostrar_datos():
     cursor.execute(query)
     result = cursor.fetchall()
     cursor.close()
+
+
+    if not result:
+        mensaje_error = "No se encontraron resultados para la búsqueda."
+        return render_template("index.html", mensaje_error=mensaje_error)
 
     for row in result:
         latitud_origen = float(row["origin_latitude"])
@@ -91,12 +129,22 @@ def mostrar_datos():
     return render_template("mostrar_datos.html", datos=result)
 
 
+
+"""
+    Obtiene datos climáticos a partir de coordenadas geográficas.
+
+    :param float latitud: Latitud de la ubicación.
+    :param float longitud: Longitud de la ubicación.
+    :return: Datos climáticos en formato JSON.
+    :rtype: dict or None
+"""
+
 def obtener_datos_clima(latitud, longitud):
     url = 'https://api.openweathermap.org/data/2.5/weather'
     params = {
         'lat': latitud,
         'lon': longitud,
-        'appid': '67bbe0a8c7d7eaf90b40257843a11140',
+        'appid': '------',
         'units': 'metric',
     }
 

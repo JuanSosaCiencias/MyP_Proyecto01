@@ -117,6 +117,31 @@ $(document).ready(function () {
 });
 
 
+$("#ciudad_origen").on("input", function (e) {
+    var valor = $(this).val();
+    valor = valor.replace(/\s/g, '');
+    $(this).val(valor);
+});
+
+$("#ciudad_destino").on("input", function (e) {
+    var valor = $(this).val();
+    valor = valor.replace(/\s/g, '');
+    $(this).val(valor);
+});
+
+    function mostrarMensajeError() {
+        var mensajeError = document.getElementById("mensaje-error");
+        mensajeError.style.display = "block";
+
+        setTimeout(function () {
+            mensajeError.style.display = "none";
+        }, 2000);
+    }
+    
+    window.onload = mostrarMensajeError;
+
+
+
 
 
 

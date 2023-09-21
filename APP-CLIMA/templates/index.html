@@ -10,6 +10,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+  <div id="mensaje-error" style="color: red;">
+    {% if mensaje_error %}
+        {{ mensaje_error }}
+    {% endif %}
+  </div>
+
 
     <div class="contenedor">
         <div class="formulario-ciudad-o-ticket">
@@ -24,13 +30,13 @@
               <form  class="inicio-ciudad" id="ciudad-form" style="display:block;" action="/mostrar_datos" method="POST">
                 <div class="registro">
                     <span class="material-symbols-outlined"> location_on </span>
-                    <input type="text" id="ciudad_origen" name="ciudad_origen" placeholder="Ciudad de Origen" />
+                    <input type="text" id="ciudad_origen" name="ciudad_origen" required placeholder="Ciudad de Origen" />
                 </div>
                     <div id="lista_origen" class="lista"></div>
 
                 <div class="registro">
                     <span class="material-symbols-outlined"> location_city </span>  
-                    <input type="text" id="ciudad_destino" name="ciudad_destino"  placeholder="Ciudad de Destino" />
+                    <input type="text" id="ciudad_destino" name="ciudad_destino" required  placeholder="Ciudad de Destino" />
                 </div>
                     <div id="lista_destino" class="lista"></div>
 
@@ -40,14 +46,14 @@
               <form  class="inicio-ciudadl" id="coordenadas-form" style="display:none;" action="/mostrar_datos" method="POST">
                 <div class="registro">
                     <span class="material-symbols-outlined"> location_on </span>
-                    <input type="text" id="coord_origen" name="coord_origen" placeholder="Coordenadas de Origen" />
+                    <input type="text" id="coord_origen" name="coord_origen" required placeholder="Coordenadas de Origen" />
                 </div>
                     <div id="lista_coordD" class="lista"></div>
 
 
                 <div class="registro">
                     <span class="material-symbols-outlined"> location_city </span>  
-                    <input type="text" id="coord_destino" name="coord_destino" placeholder="Coordenadas de Destino" />
+                    <input type="text" id="coord_destino" name="coord_destino" required placeholder="Coordenadas de Destino" />
                 </div>
                     <div id="lista_coordO" class="lista"></div>
                 <input type="submit" class="btn solid" value="Buscar" />
@@ -58,7 +64,7 @@
               <h2 class="titulo">Buscar Por Número De Ticket</h2>
               <div class="registro">
                 <span class="material-symbols-outlined">airplane_ticket</span>
-                <input type="text" id="sugeridos" name="num_ticket" placeholder="Número de Ticket">
+                <input type="text" id="sugeridos" name="num_ticket" required placeholder="Número de Ticket">
               </div>
                 <div id="lista_sugeridos" class="lista ul"></div>
               <input type="submit" class="btn" value="BUSCAR" />
