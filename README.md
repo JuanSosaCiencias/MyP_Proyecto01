@@ -54,3 +54,7 @@ Para obtener datos meteorológicos, la aplicación se conecta a la API de OpenWe
 
 
 
+# Roles de trabajo
+
+* Gael y Antonio. Trabajar en el Frontend 
+* Mike y Mario. Trabajar en el Backend
