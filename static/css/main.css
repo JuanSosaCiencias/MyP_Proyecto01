@@ -1,13 +1,10 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  min-height: 100vh;
+  position: relative;
 }
 
 /* Animacion sacada de la pagina Animated Backgrouns */
@@ -38,9 +35,7 @@ svg {
   height: 100%;
 }
 
-p {
-  font-size: 30px;
-}
+
 
 .contenedorPadre {
   bottom: 30%;
@@ -57,10 +52,4 @@ docuemntar este comentario de stack overflow */
 
   display: flex;
   align-items: center;
-}
-
-
-#imagenClima {
-  width: 100px;
-  height: 100px;
 }

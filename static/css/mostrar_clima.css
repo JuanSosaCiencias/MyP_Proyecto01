@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+div {
+    border: solid 1px black;
+}
+
+
+/* https://stackoverflow.com/questions/15884102/bootstrap-how-do-i-change-the-width-of-the-container */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 700px;
+    }
+}
+
+/* Animacion sacada de la pagina Animated Backgrouns */
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+
+
+    background-color: #0e4166;
+    background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
+
+
+    /*
+    background-color: #580303;
+    background-image: linear-gradient(to bottom, rgba(150, 34, 34, 0.86), #630b37);
+    */
+
+}
+
+.contenedor {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+}
+
+#imagenClima {
+    width: 100px;
+    height: 100px;
+}
+
+
+#container1 #container2 {
+    flex: 1;
+}
+
+#otraConsulta {
+    flex: 2;
+}
+
+#btnOtraConsulta {
+    height: 100px;
+    width: 450px;
+}
+
+.tabla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fila {
+    display: flex;
+    justify-content: center;
+}
+
+.columna {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
