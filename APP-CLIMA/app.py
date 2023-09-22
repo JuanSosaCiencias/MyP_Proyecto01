@@ -5,14 +5,12 @@ app = Flask(__name__)
 mysql = MySQL(app)
 
 
-app.config["MYSQL_HOST"] = "----"
-app.config["MYSQL_USER"] = "----"
-app.config["MYSQL_PASSWORD"] = "-----"
-app.config["MYSQL_DB"] = "-----"
+app.config["MYSQL_HOST"] = "localhost"
+app.config["MYSQL_USER"] = "root"
+app.config["MYSQL_PASSWORD"] = "11julio2004"
+app.config["MYSQL_DB"] = "test2"
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
  
-
-
 
 
 """
@@ -25,17 +23,7 @@ app.config["MYSQL_CURSORCLASS"] = "DictCursor"
 
 @app.route("/")
 def index():
-    try:
-        cursor = mysql.connection.cursor()
-        cursor.execute("SELECT 1") 
-        result = cursor.fetchone()
-        mensaje = "Funcionando Correctamente"
-    except Exception as e:
-        mensaje = f"Error en la base de datos: {str(e)}"
-    finally:
-        cursor.close()
-
-    return render_template("index.html", mensaje=mensaje)
+    return render_template("index.html")
 
 
 """
@@ -144,7 +132,7 @@ def obtener_datos_clima(latitud, longitud):
     params = {
         'lat': latitud,
         'lon': longitud,
-        'appid': '------',
+        'appid': '67bbe0a8c7d7eaf90b40257843a11140',
         'units': 'metric',
     }
 
