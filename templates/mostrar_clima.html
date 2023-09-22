@@ -33,9 +33,9 @@
         width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs>
             <linearGradient id="bg">
-                <stop offset="0%" style="stop-color:rgba(167, 100, 46, 0.06)"></stop>
-                <stop offset="50%" style="stop-color:rgba(230, 141, 141, 0.6)"></stop>
-                <stop offset="100%" style="stop-color:rgba(126, 52, 76, 0.2)"></stop>
+                <stop offset="0%" style="stop-color:rgba(63, 63, 66, 0.06)"></stop>
+                <stop offset="50%" style="stop-color:rgba(34, 34, 34, 0.6)"></stop>
+                <stop offset="100%" style="stop-color:rgba(0, 0, 0, 0.2)"></stop>
             </linearGradient>
             <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
     s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
@@ -157,7 +157,7 @@
 
                     <div class="row m-2 p-2">
                         <div class="col m-2 p-2 d-flex justify-content-center">
-                            <p class="text.centrar"> Humedad </p>
+                            <p class="text.centrar"> {{ dato.humedad_origen }} </p>
                         </div>
 
                         <div class="col m-2 p-2">
@@ -189,10 +189,14 @@
             </div>
 
             <div class="fila m-4 p-2">
-                <button type="submit" class="btn btn-dark btn-lg text-light fs-1">
-                    ¿Quieres hacer otra consulta?
+                <button type="submit" class="btn btn-dark btn-lg text-light fs-1"
+                    onclick="window.location.href = 'index.html'">
+                    Hacer otra consulta
                 </button>
             </div>
+
+            <button id="botonMagico"> magia </button>
+            <button id="botonMagico2"> magia </button>
 
         </div>
 
@@ -200,6 +204,8 @@
 
 
     </div>
+
+    <script src="../static/js/fondoMostrarClima.js"></script>
 
 
 

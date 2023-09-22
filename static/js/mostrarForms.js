@@ -18,10 +18,13 @@ $(document).ready(function () {
 
     $("#btnCiudad").click(function () {
         ocultarYMostrarDiv("#entradaTicket", "#entradaCiudad");
+        $("#inputTicket").val("");
     });
 
     $("#btnTicket").click(function () {
-        ocultarYMostrarDiv("#entradaCiudad", "#entradaTicket")
+        ocultarYMostrarDiv("#entradaCiudad", "#entradaTicket");
+        $("#inputCiudadOrigen").val("");
+        $("#inputCiudadDestino").val("");
     })
 
 
