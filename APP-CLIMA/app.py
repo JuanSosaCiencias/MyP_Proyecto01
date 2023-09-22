@@ -5,10 +5,10 @@ app = Flask(__name__)
 mysql = MySQL(app)
 
 
-app.config["MYSQL_HOST"] = "----"
-app.config["MYSQL_USER"] = "----"
-app.config["MYSQL_PASSWORD"] = "-----"
-app.config["MYSQL_DB"] = "-----"
+app.config["MYSQL_HOST"] = "localhost"
+app.config["MYSQL_USER"] = "root"
+app.config["MYSQL_PASSWORD"] = "m26p12c04"
+app.config["MYSQL_DB"] = "db_clima"
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
  
 
@@ -144,7 +144,7 @@ def obtener_datos_clima(latitud, longitud):
     params = {
         'lat': latitud,
         'lon': longitud,
-        'appid': '------',
+        'appid': '67bbe0a8c7d7eaf90b40257843a11140',
         'units': 'metric',
     }
 
