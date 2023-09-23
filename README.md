@@ -34,20 +34,34 @@ Asegúrate de tener instalados los siguientes requisitos en tu sistema:
 Para ejecutar la aplicación, se tiene que descargar Python y Flask instalados. Luego, sigue estos pasos:
 
 1. Clona el repositorio desde la terminal:
-    git clone https://github.com/JuanSosaCiencias/MyP_Proyecto01.git
+
+```bash
+   $ git clone https://github.com/JuanSosaCiencias/MyP_Proyecto01.git
+```
 
 2. Crear un entorno virtual desde la carpeta del proyecto:
+
+```bash
     $ cd MyP_Proyecto01
     $ python -m venv venv
-
+```
 3. Activar el entorno virtual desde la carpeta del proyecto:
+
+```bash
     $ venv \ Scripts \ activate  ó  source venv/bin/activate 
+```
 
 4. Instalar las dependencias del proyecto: `requirements.txt`
+
+```bash
     $ pip install -r requirements.txt
+```
 
 5. Instalar BackgroundScheduler:
-    $pip install apscheduler
+
+```bash
+    $ pip install apscheduler
+```
 
 5. Importar la base de datos `db_clima2.sql` desde tu BD preferida.
 
@@ -62,8 +76,11 @@ Para ejecutar la aplicación, se tiene que descargar Python y Flask instalados. 
         ESTÄS APARECERAN EN LAS LÍNEAS DE CÓDIGO: 10, 238 y 306  
 
 7. Agregar la clave de la API de OpenWeatherMap:
+
+``` python
     'appid': '------' (Línea de código: 141)
      api_key = '-----' (Linea de codigo: 175)
+```
 
 
 ## Pasos para ejecutar la página:
