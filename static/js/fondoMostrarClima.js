@@ -3,6 +3,7 @@ let imagenClimaOrigen = "#imgClimaOrigen"
 let imagenClimaDestino = "#imgClimaDestino"
 
 let imgSoleado = "../static/img/soleado.png";
+let imgAlgoSoleado = "../static/img/algoSoleado.png";
 let imgUnaNube = "../static/img/unaNube.png";
 let imgNublado = "../static/img/nublado.png";
 let imgLluvia = "../static/img/lluvia.png";
@@ -88,9 +89,9 @@ $(document).ready(function () {
         fondoSVG: {
             "background-image": "linear-gradient(to bottom, rgba(14, 98, 182, 0.86), #7ea5b8)"
         },
-        etiquetasStop: '<stop offset="0%" style="stop-color:rgba(63, 63, 66, 0.06)"></stop>' +
-            '<stop offset="50%" style="stop-color:rgba(34, 34, 34, 0.6)"></stop>' +
-            '<stop offset="100%" style="stop-color:rgba(0, 0, 0, 0.2)"></stop>',
+        etiquetasStop: '<stop offset="0%" style="stop-color:rgba(62, 101, 156, 0.795)"></stop>' +
+            '<stop offset="50%" style="stop-color:rgba(35, 68, 102, 0.6)"></stop>' +
+            '<stop offset="100%" style="stop-color:rgba(4, 154, 199, 0.799)"></stop>',
         estilosBody: {
             "color": "white",
             "background-image": "linear-gradient(to bottom, rgba(14, 98, 182, 0.86), #7ea5b8)"
@@ -99,7 +100,7 @@ $(document).ready(function () {
             "background-color": "black"
         },
         colorTextoBoton: {
-            "color": "black",
+            "color": "white",
         }
     }
 
@@ -161,7 +162,7 @@ $(document).ready(function () {
             "background-image": "linear-gradient(to bottom, rgba(193, 180, 180, 0.86), #8d868a)"
         },
         fondoTexto: {
-            "background-color": "rgb(61, 61, 61)"
+            "background-color": "rgb(165, 162, 162)"
         },
         colorTextoBoton: {
             "color": "black",
@@ -171,39 +172,13 @@ $(document).ready(function () {
 
     let climaOrigen = "10d";
 
-    let climaDestino = "02d"
+    let climaDestino = "50d"
 
 
 
     $("#botonMagico1").on("click", function () {
         ajustaEstiloPagina(climaDestino);
     });
-    $("#botonMagico2").on("click", function () {
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico3").on("click", function () {
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico4").on("click", function () {
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico5").on("click", function () {
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico6").on("click", function () {
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico7").on("click", function () {
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico8").on("click", function () {
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico9").on("click", function () {
-        ajustaEstiloPagina(climaDestino);
-    });
-
-
 
 
     /**
@@ -213,7 +188,7 @@ $(document).ready(function () {
      */
     function ajustaEstiloPagina(clima) {
 
-        let imgParaClimaOrigen = imgClimaOrigen(climaOrigen);
+        let imgParaClimaOrigen = imgClima(climaOrigen);
         $(imgOrigen).attr("src", imgParaClimaOrigen);
 
         switch (clima) {
@@ -240,12 +215,12 @@ $(document).ready(function () {
 
             case "09d":
                 cambiarFondo(lluvia);
-                $(imgDestino).attr("src", lluvia);
+                $(imgDestino).attr("src", imgLluvia);
                 break;
 
             case "10d":
                 cambiarFondo(lluvia);
-                $(imgDestino).attr("src", lluvia);
+                $(imgDestino).attr("src", imgLluvia);
                 break;
 
             case "11d":
@@ -260,7 +235,7 @@ $(document).ready(function () {
 
             case "50d":
                 cambiarFondo(niebla);
-                $(imgDestino).atrr("src", imgNiebla);
+                $(imgDestino).attr("src", imgNiebla);
                 break;
 
         }
@@ -283,16 +258,16 @@ $(document).ready(function () {
     /**
  * Devuelve la imagen correspondiente que va en 
  * la informacion del clima de origen
- * @param {*} climaOrigen el clima de origen 
+ * @param {*} climaOrigen el clima 
  * @returns un link a una imagen
  */
-    function imgClimaOrigen(climaOrigen) {
-        switch (climaOrigen) {
+    function imgClima(clima) {
+        switch (clima) {
             case "01d":
                 return imgSoleado;
 
             case "02d":
-                return imgUnaNube;
+                return imgAlgoSoleado;
 
             case "03d":
                 return imgUnaNube;
@@ -300,8 +275,11 @@ $(document).ready(function () {
             case "04d":
                 return imgNublado;
 
+            case "09d":
+                return imgLluvia;
+
             case "10d":
-                return imgLluvia
+                return imgLluvia;
 
             case "11d":
                 return imgTormenta;
