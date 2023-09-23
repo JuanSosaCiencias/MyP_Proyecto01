@@ -1,7 +1,12 @@
+let ciudadInputOrigen = "#ciudadInputOrigen"
+let ciudadInputDestino = "#ciudadInputDestino"
+
+let inputCiudadOrigen = "#inputCiudadOrigen"
+let inputCiudadDestino = "#inputCiudadDestino"
+
+
 
 $(document).ready(function () {
-
-
 
     /**
      * Implementacion de pluggin para el autocompletado en boostrap
@@ -10,11 +15,11 @@ $(document).ready(function () {
     */
 
 
-    $("#ciudadInputOrigen").on("input", function (e) {
+    $(ciudadInputOrigen).on("input", function (e) {
         $.ajax({
             method: "post",
             url: "/autocompletadorOrigen",
-            data: { text: $("#ciudadInputOrigen").val() },
+            data: { text: $(ciudadInputOrigen).val() },
             success: function (res) {
 
                 let ciudades = [];
@@ -23,7 +28,7 @@ $(document).ready(function () {
                     ciudades.push(value.origin);
                 })
 
-                $("#inputCiudadOrigen").autofill({
+                $(inputCiudadOrigen).autofill({
                     values: ciudades,
                     itemLimit: 3,
                     darkMode: true,
@@ -34,11 +39,11 @@ $(document).ready(function () {
     });
 
 
-    $("#ciudadInputDestino").on("input", function (e) {
+    $(ciudadInputDestino).on("input", function (e) {
         $.ajax({
             method: "post",
             url: "/autocompletadorDestino",
-            data: { text: $("#ciudadInputDestino").val() },
+            data: { text: $(ciudadInputDestino).val() },
             success: function (res) {
 
                 let ciudades = [];
@@ -47,7 +52,7 @@ $(document).ready(function () {
                     ciudades.push(value.origin);
                 })
 
-                $("#inputCiudadDestino").autofill({
+                $(inputCiudadDestino).autofill({
                     values: ciudades,
                     itemLimit: 8,
                     darkMode: true,

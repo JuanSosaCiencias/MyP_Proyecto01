@@ -3,22 +3,23 @@ body {
     padding: 0;
     min-height: 100vh;
     position: relative;
-    background-image: linear-gradient(to bottom, rgba(19, 18, 18, 0.86), #8d868a);
+    background-image: linear-gradient(to bottom, rgba(185, 168, 168, 0.86), #1c4c89);
     font-family: 'Roboto', sans-serif;
     font-family: 'Ubuntu', sans-serif;
-
-    color: black;
+    color: white;
 }
 
 
-/* https://stackoverflow.com/questions/15884102/bootstrap-how-do-i-change-the-width-of-the-container */
+/* https://stackoverflow.com/questions/15884102/bootstrap-how-do-i-change-the-width-of-the-container 
+consultado: 21 de septiemnbre*/
 @media (min-width: 1200px) {
     .container {
         max-width: 800px;
     }
 }
 
-/* Animacion sacada de la pagina Animated Backgrouns */
+/* Animacion sacada de la pagina Animated Backgrouns 
+consultado el 20 de septiembre */
 svg {
     position: fixed;
     bottom: 0;
@@ -29,7 +30,7 @@ svg {
     box-sizing: border-box;
     display: block;
 
-    background-image: linear-gradient(to bottom, rgba(246, 247, 248, 0.86), #32ace4);
+    background-image: linear-gradient(to bottom, rgba(193, 180, 180, 0.86), #8d868a);
 }
 
 .contenedor {
@@ -40,24 +41,6 @@ svg {
     width: 100px;
     height: 100px;
 }
-
-.tabla {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.fila {
-    display: flex;
-    justify-content: center;
-}
-
-.columna {
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-}
-
 
 
 .textoInformativo {
@@ -91,5 +74,5 @@ svg {
 }
 
 .fondoTexto {
-    background-color: white;
+    background-color: rgb(61, 61, 61);
 }

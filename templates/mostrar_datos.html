@@ -46,9 +46,9 @@
         width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs>
             <linearGradient id="bg">
-                <stop offset="0%" style="stop-color:rgba(185, 208, 209, 0.795)"></stop>
-                <stop offset="50%" style="stop-color:rgba(232, 238, 241, 0.6)"></stop>
-                <stop offset="100%" style="stop-color:rgba(202, 231, 228, 0.799)"></stop>
+                <stop offset="0%" style="stop-color:rgba(107, 108, 108, 0.795)"></stop>
+                <stop offset="50%" style="stop-color:rgba(126, 127, 128, 0.6)"></stop>
+                <stop offset="100%" style="stop-color:rgba(181, 181, 181, 0.799)"></stop>
             </linearGradient>
             <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
     s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
@@ -86,7 +86,7 @@
 
                 <div class="row m-2 p-2 justify-content-center">
                     <div class="col-4 m-2 p-2 d-flex justify-content-center align-items-center">
-                        <img src="../static/img/soleado.png" class="imagenClima" alt="imagenClima">
+                        <img src="../static/img/soleado.png" class="imagenClima" alt="imagenClima" id="imgClimaOrigen">
                     </div>
                     <div class="col m-2 p-2">
                         <div class="container m-2 p-2 text-center">
@@ -197,7 +197,7 @@
 
                 <div class="row m-2 p-2 justify-content-center">
                     <div class="col-4 m-2 p-2  d-flex justify-content-center align-items-center">
-                        <img src="../static/img/soleado.png" class="imagenClima" alt="imagenClima">
+                        <img src="../static/img/soleado.png" class="imagenClima" alt="imagenClima" id="imgClimaDestino">
                     </div>
                     <div class="col m-2 p-2">
                         <div class="container m-2 p-2 text-center">
@@ -302,23 +302,29 @@
 
         <div class="row m-4 p-2">
             <div class="text-center">
-
                 <button type="submit" class="btn btn-lg fs-1 fondoTexto" onclick="window.location.href = 'index.html'">
                     Hacer otra consulta
                 </button>
             </div>
         </div>
 
-        <button id="botonMagico"> magia </button>
-        <button id="botonMagico2"> magia </button>
+        <button id="botonMagico1"> soleado </button>
+        <button id="botonMagico2"> pocasNubes </button>
+        <button id="botonMagico3"> unaNube </button>
+        <button id="botonMagico4"> nublado </button>
+        <button id="botonMagico5"> lluvia </button>
+        <button id="botonMagico6"> lluvia2 </button>
+        <button id="botonMagico7"> tormenta </button>
+        <button id="botonMagico8"> nevado</button>
+        <button id="botonMagico9"> niebla </button>
+
+        <img src="../static/img/soleado.png" class="imagenClima" alt="imagenClima" id="imgClima">
+        ola ola
 
 
+        <script src="../static/js/fondoMostrarClima.js"></script>
 
 
-
-    </div>
-
-    <script src="../static/js/fondoMostrarClima.js"></script>
 
 
 
