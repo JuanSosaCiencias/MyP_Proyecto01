@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_mysqldb import MySQL
 import pymysql, requests
-from datetime import datetime
+from googletrans import Translator
 from apscheduler.schedulers.background import BackgroundScheduler
 app = Flask(__name__)
 mysql = MySQL(app)
-
 
 app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
@@ -13,20 +12,15 @@ app.config["MYSQL_PASSWORD"] = "-----"
 app.config["MYSQL_DB"] = "data_1"
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
  
-
-
-
-
-"""
+@app.route("/")
+def index():
+    """
     Ruta de inicio de la aplicación.
 
     :return: Renderiza el template "index.html" con un mensaje a la conexión a la base de datos.
     :rtype: str
 
-"""
-
-@app.route("/")
-def index():
+    """
     try:
         cursor = mysql.connection.cursor()
         cursor.execute("SELECT 1") 
@@ -39,17 +33,15 @@ def index():
 
     return render_template("index.html", mensaje=mensaje)
 
-
-"""
+@app.route("/autocompletadorOrigen", methods=["POST", "GET"])
+def autocompletadorOrigen():
+    """
     Ruta para realizar autocompletado de ciudades de origen.
 
     :param str text: Texto de búsqueda.
     :return: Respuesta JSON con resultados de autocompletado.
     :rtype: dict
-"""
-
-@app.route("/autocompletadorOrigen", methods=["POST", "GET"])
-def autocompletadorOrigen():
+    """
     buscador = request.form.get("text")
     cursor = mysql.connection.cursor()
     query = "SELECT DISTINCT iata FROM ciudades WHERE iata LIKE '{}%' LIMIT 6".format(buscador)
@@ -57,19 +49,16 @@ def autocompletadorOrigen():
     result = cursor.fetchall()
     return jsonify(result)
 
-
-
-"""
+@app.route("/autocompletadorDestino",methods=["POST","GET"])
+def autocompletadorDestino():
+    """
     Ruta para realizar autocompletado de ciudades de destino.
 
     :param str text: Texto de búsqueda.
     :return: Respuesta JSON con resultados de autocompletado.
     :rtype: dict
 
-"""
-
-@app.route("/autocompletadorDestino",methods=["POST","GET"])
-def autocompletadorDestino():
+    """
     buscador = request.form.get("text")
     cursor = mysql.connection.cursor()
     query = "SELECT  DISTINCT iata FROM ciudades WHERE iata LIKE '{}%' LIMIT 6".format(buscador)
@@ -78,8 +67,9 @@ def autocompletadorDestino():
     return jsonify(result)
 
 
-
-"""
+@app.route("/mostrar_datos", methods=["POST"])
+def mostrar_datos():
+    """
     Ruta para mostrar datos de acuerdo a la búsqueda.
 
     :param str num_ticket: Número de ticket a buscar.
@@ -87,9 +77,7 @@ def autocompletadorDestino():
     :param str ciudad_destino: Ciudad de destino a buscar.
     :return: Renderiza el template "mostrar_datos.html" con los resultados de la búsqueda.
     :rtype: str
-"""
-@app.route("/mostrar_datos", methods=["POST"])
-def mostrar_datos():
+    """
     num_ticket = request.form.get("num_ticket")
     ciudad_origen = request.form.get("ciudad_origen")
     ciudad_destino = request.form.get("ciudad_destino")
@@ -119,13 +107,43 @@ def mostrar_datos():
         cursor.close()
     else:
         result = None
-
     return render_template("mostrar_datos.html", datos=result)
 
+def translate_text(text, target_language='es'):
+    """
+    Traduce un texto dado a un idioma objetivo utilizando el servicio de traducción.
+
+    Args:
+        text (str): El texto que se desea traducir.
+        target_language (str, opcional): El idioma al que se desea traducir el texto. Por defecto, es 'es' (español).
+
+    Returns:
+        str: El texto traducido al idioma objetivo.
+
+    Raises:
+        Exception: Se produce una excepción general si la traducción no se puede realizar.
+    
+    Note:
+        Si el texto contiene la palabra "clear" (en minúsculas), se proporciona una traducción personalizada como "Despejado".
+
+    Example:
+        >>> translate_text("Hello, world!", target_language='fr')
+        'Bonjour, le monde!'
+    """
+    try:
+        translator = Translator()
+        translated_text = translator.translate(text, dest=target_language)
+        return translated_text.text
+    except Exception as e:
+        if "clear" in text.lower():
+            return "Despejado"  # Proporciona una traducción personalizada para "clear"
+        else:
+            print(f"Error al traducir: {e}")
+            return None
 
 def actualizar_ciudades():
     """
-    Actualiza los datos climáticos de las primeras 52 ciudades en la base de datos 'db_clima2'
+    Actualiza los datos climáticos de las primeras 52 ciudades en la base de datos 'data_1'
     utilizando la API de OpenWeatherMap.
 
     La función obtiene las coordenadas de latitud y longitud de cada ciudad desde la base de datos
@@ -143,13 +161,11 @@ def actualizar_ciudades():
         latitud = ciudad['latitud']  
         longitud = ciudad['longitud']
         api_key = '-------'
-
         url = f'https://api.openweathermap.org/data/2.5/weather?lat={latitud}&lon={longitud}&appid={api_key}&units=metric'
         response = requests.get(url)
 
         if response.status_code == 200:
             data = response.json()
-
             temperatura = data['main']['temp']
             clima_principal = data['weather'][0]['main']
             icono = data['weather'][0]['icon']
@@ -162,13 +178,12 @@ def actualizar_ciudades():
             angulo_viento = data['wind']['deg']
             lluvia = data.get('rain', {}).get('1h', 0)
             nubes = data['clouds']['all']
-
             actualizar_ciudad_db(
                 ciudad['iata'], 
                 temperatura, 
-                clima_principal, 
+                translate_text(clima_principal), 
                 icono, 
-                descripcion_clima, 
+                translate_text(descripcion_clima), 
                 sentimiento, 
                 temperatura_max, 
                 temperatura_min, 
@@ -181,10 +196,9 @@ def actualizar_ciudades():
         else:
             print(f"Error al obtener datos de temperatura para latitud {latitud} y longitud {longitud}")
 
-
 def actualizar_ciudad_db(iata, temperatura, clima_principal, icono, descripcion_clima, sentimiento, temperatura_max, temperatura_min, humedad, velocidad_viento, angulo_viento, lluvia, nubes):
     """
-    Actualiza los datos de una ciudad en la base de datos 'db_clima2'.
+    Actualiza los datos de una ciudad en la base de datos 'data_1'.
 
     Args:
         iata (str): El código IATA de la ciudad que se actualizará.
@@ -211,9 +225,7 @@ def actualizar_ciudad_db(iata, temperatura, clima_principal, icono, descripcion_
             password='-----',
             database='data_1'
         )
-
         cursor = conexion.cursor()
-
         consulta_actualizar = """
             UPDATE ciudades 
             SET 
@@ -231,7 +243,6 @@ def actualizar_ciudad_db(iata, temperatura, clima_principal, icono, descripcion_
                 nubes = %s
             WHERE iata = %s
         """
-
         valores = (
             temperatura, 
             clima_principal, 
@@ -247,24 +258,17 @@ def actualizar_ciudad_db(iata, temperatura, clima_principal, icono, descripcion_
             nubes, 
             iata
         )
-
         cursor.execute(consulta_actualizar, valores)
-
-    
         conexion.commit()
-
-     
         cursor.close()
         conexion.close()
-
         print(f"Datos actualizados para {iata}: temperatura={temperatura}°C, clima_principal={clima_principal}, icono={icono}, descripcion_clima={descripcion_clima}, sentimiento={sentimiento}, temperatura_max={temperatura_max}°C, temperatura_min={temperatura_min}°C, humedad={humedad}%, velocidad_viento={velocidad_viento} m/s, angulo_viento={angulo_viento}°, lluvia={lluvia} mm, nubes={nubes}%")
     except Exception as e:
         print(f"Error al actualizar datos para {iata}: {str(e)}")
 
-
 def obtener_primeras_52_ciudades_desde_bd():
     """
-    Esta función se encarga de obtener las primeras 52 ciudades desde una base de datos llamada 'db_clima2'.
+    Esta función se encarga de obtener las primeras 52 ciudades desde una base de datos llamada 'data_1'.
     
     Returns:
         list: Una lista de diccionarios, donde cada diccionario representa una ciudad con sus datos.
@@ -272,28 +276,19 @@ def obtener_primeras_52_ciudades_desde_bd():
               Si ocurre un error, retorna una lista vacía.
     """
     try:
-       
         conexion = pymysql.connect(
             host='localhost',
             user='root',
-            password='------',
+            password='-----',
             database='data_1'
         )
-
-      
         cursor = conexion.cursor()
-
-       
         consulta = "SELECT * FROM ciudades LIMIT 52 "
-
         cursor.execute(consulta)
-
         columnas = [columna[0] for columna in cursor.description]
         ciudades = [dict(zip(columnas, fila)) for fila in cursor.fetchall()]
-
         cursor.close()
         conexion.close()
-
         return ciudades
     except Exception as e:
         print(f"Error al obtener las primeras 52 ciudades: {str(e)}")
@@ -302,6 +297,6 @@ def obtener_primeras_52_ciudades_desde_bd():
 if __name__ == "__main__":
     actualizar_ciudades()
     scheduler = BackgroundScheduler()
-    scheduler.add_job(actualizar_ciudades, 'interval', minutes=3)
+    scheduler.add_job(actualizar_ciudades, 'interval', minutes=10)
     scheduler.start()
     app.run()
