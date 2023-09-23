@@ -32,6 +32,24 @@ $(document).ready(function () {
         });
     });
 
+
+    $("#ciudadInputDestino").on("input", function (e) {
+        $.ajax({
+            method: "post",
+            url: "/autocompletadorDestino",
+            data: { text: $("#ciudadInputDestino").val() },
+            success: function (res) {
+
+                $("#inputCiudadDestino").autofill({
+                    values: lista,
+                    itemLimit: 3,
+                    darkMode: true,
+                    minCharacters: 1
+                });
+            }
+        });
+    });
+
 });
 
 

@@ -29,6 +29,14 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+    <!-- fuentes extraidas de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@300;500;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
@@ -38,9 +46,9 @@
         width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs>
             <linearGradient id="bg">
-                <stop offset="0%" style="stop-color:rgba(63, 63, 66, 0.06)"></stop>
-                <stop offset="50%" style="stop-color:rgba(34, 34, 34, 0.6)"></stop>
-                <stop offset="100%" style="stop-color:rgba(0, 0, 0, 0.2)"></stop>
+                <stop offset="0%" style="stop-color:rgba(185, 208, 209, 0.795)"></stop>
+                <stop offset="50%" style="stop-color:rgba(232, 238, 241, 0.6)"></stop>
+                <stop offset="100%" style="stop-color:rgba(202, 231, 228, 0.799)"></stop>
             </linearGradient>
             <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
     s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
@@ -74,14 +82,13 @@
 
                     <div class="row m-2 p-2">
                         <div class=" text-center">
-                            <h1>Ciudad origen </h1>
+                            <h1 class="tituloCiudad">Ciudad origen </h1>
                         </div>
                     </div>
 
                     <div class="row m-2 p-2">
                         <div class="col-4 m-2 p-2 align-items-center">
-                            <img src="../static/img/weather-forecast.png" class="mx-auto d-block" id="imagenClima"
-                                alt="nubeConSol">
+                            <img src="../static/img/soleado.png" class="mx-auto d-block imagenClima" alt="imagenClima">
                         </div>
                         <div class="col m-2 p-2">
                             <div class="container m-2 p-2 text-center text-light">
@@ -186,14 +193,13 @@
 
                     <div class="row m-2 p-2">
                         <div class=" text-center">
-                            <h1>Ciudad origen </h1>
+                            <h1 class="tituloCiudad">Ciudad origen </h1>
                         </div>
                     </div>
 
                     <div class="row m-2 p-2">
                         <div class="col-4 m-2 p-2 align-items-center">
-                            <img src="../static/img/weather-forecast.png" class="mx-auto d-block" id="imagenClima"
-                                alt="nubeConSol">
+                            <img src="../static/img/soleado.png" class="mx-auto d-block imagenClima" alt="imagenClima">
                         </div>
                         <div class="col m-2 p-2">
                             <div class="container m-2 p-2 text-center text-light">
@@ -297,8 +303,8 @@
             </div>
 
             <div class="fila m-4 p-2">
-                <button type="submit" class="btn btn-dark btn-lg text-light fs-1"
-                    onclick="window.location.href = 'index.html'">
+                <button type="submit" class="btn btn-lg text-light fs-1" onclick="window.location.href = 'index.html'"
+                    id="nuevaConsulta">
                     Hacer otra consulta
                 </button>
             </div>

@@ -23,6 +23,16 @@ $(document).ready(function () {
             '<stop offset="100%" style="stop-color:rgba(0, 0, 0, 0.2)"></stop>'
     }
 
+    let normal = {
+        fondoSVG: {
+            "background-image": "linear-gradient(to bottom, rgba(113, 201, 212, 0.86), #d2d6d6)"
+        },
+
+        etiquetasStop: '<stop offset="0%" style="stop-color:rgba(185, 208, 209, 0.795)"></stop>' +
+            '<stop offset="50%" style="stop-color:rgba(232, 238, 241, 0.6)"></stop>' +
+            '<stop offset="100%" style="stop-color:rgba(202, 231, 228, 0.799)"></stop>'
+    }
+
 
     /**
      * Cambia el color del fondo animado CSS dependiendo de los 

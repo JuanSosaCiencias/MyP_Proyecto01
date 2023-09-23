@@ -1,5 +1,6 @@
 /**
- * Codigo sacado de Boostrap
+ * Codigo sacado de Boostrap, especificamente: https://getbootstrap.com/docs/5.3/forms/validation/
+ * consultado el 21 de septiembre 
  */
 (() => {
     'use strict'
@@ -23,7 +24,6 @@
 
 $(document).ready(
     function () {
-
 
         /**
          * Codigo sacado de: https://stackoverflow.com/questions/12010275/strip-white-spaces-on-input
