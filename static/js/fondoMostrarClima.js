@@ -32,6 +32,7 @@ $(document).ready(function () {
      */
     function cambiarFondo(fondoSVG, etiquetasStop) {
         $("svg").css(fondoSVG);
+        $("body").css(fondoSVG);
         linearGradient.html(etiquetasStop);
     }
 

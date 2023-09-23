@@ -2,17 +2,17 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   min-height: 100vh;
-  position: relative;
+  background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
 }
 
 /* Animacion sacada de la pagina Animated Backgrouns */
 svg {
-  position: absolute;
+  position: fixed;
+  bottom: 0;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   box-sizing: border-box;
   display: block;
@@ -20,7 +20,6 @@ svg {
 
   background-color: #0e4166;
   background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
-
 
   /*
   background-color: #580303;
@@ -33,12 +32,6 @@ svg {
   position: relative;
   width: 100%;
   height: 100%;
-}
-
-
-
-.contenedorPadre {
-  bottom: 30%;
 }
 
 

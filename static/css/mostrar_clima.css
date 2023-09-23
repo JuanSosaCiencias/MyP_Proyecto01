@@ -1,37 +1,31 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     min-height: 100vh;
     position: relative;
+    background-image: linear-gradient(to bottom, rgba(19, 18, 18, 0.86), #8d868a);
 }
-
-/*
-div {
-    border: solid 1px black;
-}
-*/
 
 
 /* https://stackoverflow.com/questions/15884102/bootstrap-how-do-i-change-the-width-of-the-container */
 @media (min-width: 1200px) {
     .container {
-        max-width: 700px;
+        max-width: 800px;
     }
 }
 
 /* Animacion sacada de la pagina Animated Backgrouns */
 svg {
-    position: absolute;
+    position: fixed;
+    bottom: 0;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     box-sizing: border-box;
     display: block;
 
     background-image: linear-gradient(to bottom, rgba(19, 18, 18, 0.86), #8d868a);
-
 }
 
 .contenedor {
@@ -43,20 +37,6 @@ svg {
 #imagenClima {
     width: 100px;
     height: 100px;
-}
-
-
-#container1 #container2 {
-    flex: 1;
-}
-
-#otraConsulta {
-    flex: 2;
-}
-
-#btnOtraConsulta {
-    height: 100px;
-    width: 450px;
 }
 
 .tabla {
@@ -74,4 +54,29 @@ svg {
     flex: 1;
     justify-content: center;
     align-items: center;
+}
+
+
+
+.textoInformativo {
+    display: flex;
+    align-items: center;
+}
+
+.icono {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+.icono i {
+    font-size: 40px;
+}
+
+.texto {
+    flex: 1;
+    text-align: center;
+}
+
+.texto p {
+    font-size: 1.5rem;
 }

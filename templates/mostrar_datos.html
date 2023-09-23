@@ -24,11 +24,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
 
-    <!-- Animacion sacada de la pagina Animated Backgrouns -->
+    <!-- Animacion sacada de la pagina Animated Backgrouns, consultada el 20 de semptiembre-->
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs>
@@ -65,26 +70,24 @@
 
             <div class="fila m-2 p-2">
 
-                <div class="container m-4 p-2 text-center text-light" id="columna">
+                <div class="container m-5 p-2 text-center text-light" id="columna">
 
                     <div class="row m-2 p-2">
-                        <div class="fs-1 text-center">
-                            Clima ciudad origen
+                        <div class=" text-center">
+                            <h1>Ciudad origen </h1>
                         </div>
                     </div>
 
                     <div class="row m-2 p-2">
-                        <div class="col-4 m-2 p-2">
-                            <img src="../static/img/weather-forecast.png" id="imagenClima" alt="nubeConSol">
+                        <div class="col-4 m-2 p-2 align-items-center">
+                            <img src="../static/img/weather-forecast.png" class="mx-auto d-block" id="imagenClima"
+                                alt="nubeConSol">
                         </div>
                         <div class="col m-2 p-2">
                             <div class="container m-2 p-2 text-center text-light">
                                 <div class="row">
                                     <div class="col">
-                                        <h1> Clima </h1>
-                                    </div>
-                                    <div class="col">
-                                        <h1> 25°</h1>
+                                        <h1> Clima Principal </h1>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -94,58 +97,109 @@
                         </div>
                     </div>
 
-                    <div class="row m-2 p-2">
-                        <div class="col m-2 p-2 d-flex justify-content-center">
-                            <p class="text.centrar"> Humedad </p>
+                    <div class="row">
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-temperature-full"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Temperatura maxima </p>
+                                <p> </p>
+                            </div>
+
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> Viento </p>
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-temperature-empty"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Temperatura minima </p>
+                                <p> </p>
+                            </div>
+
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> Tempertatura</p>
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-cloud-rain"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Lluvia </p>
+                                <p> </p>
+                            </div>
+
                         </div>
                     </div>
 
-                    <div class="row m-2 p-2">
-                        <div class="col m-2 p-2 d-flex justify-content-center">
-                            <p class="text.centrar"> Nubosidad </p>
+                    <div class="row">
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Humedad </p>
+                                <p> {{ dato[0].humedad_origen }}% </p>
+                            </div>
+
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> </p>
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-cloud"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Nubosidad </p>
+                                <p> </p>
+                            </div>
+
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> 95</p>
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-wind"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Viento </p>
+                                <p> </p>
+                            </div>
+
                         </div>
                     </div>
-
 
                 </div>
 
 
-                <div class="container m-4 p-2 text-center text-light align-items-center" id="columna">
+                <div class="container m-5 p-2 text-center text-light align-items-center" id="columna">
 
                     <div class="row m-2 p-2">
-                        <div class="fs-1 text-center">
-                            Clima ciudad destino
+                        <div class=" text-center">
+                            <h1>Ciudad origen </h1>
                         </div>
                     </div>
 
                     <div class="row m-2 p-2">
-                        <div class="col-4 m-2 p-2">
-                            <img src="../static/img/weather-forecast.png" id="imagenClima" alt="nubeConSol">
+                        <div class="col-4 m-2 p-2 align-items-center">
+                            <img src="../static/img/weather-forecast.png" class="mx-auto d-block" id="imagenClima"
+                                alt="nubeConSol">
                         </div>
                         <div class="col m-2 p-2">
                             <div class="container m-2 p-2 text-center text-light">
                                 <div class="row">
                                     <div class="col">
-                                        <h1> Clima </h1>
-                                    </div>
-                                    <div class="col">
-                                        <h1> 25°</h1>
+                                        <h1> Clima Principal </h1>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -155,31 +209,85 @@
                         </div>
                     </div>
 
-                    <div class="row m-2 p-2">
-                        <div class="col m-2 p-2 d-flex justify-content-center">
-                            <p class="text.centrar"> {{ dato.humedad_origen }} </p>
+                    <div class="row">
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-temperature-full"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Temperatura maxima </p>
+                                <p> </p>
+                            </div>
+
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> Viento </p>
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-temperature-empty"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Temperatura minima </p>
+                                <p> </p>
+                            </div>
+
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> Tempertatura</p>
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-cloud-rain"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Lluvia </p>
+                                <p> </p>
+                            </div>
+
                         </div>
                     </div>
 
-                    <div class="row m-2 p-2">
-                        <div class="col m-2 p-2 d-flex justify-content-center">
-                            <p class="text.centrar"> Nubosidad </p>
+                    <div class="row">
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Humedad </p>
+                                <p> texto </p>
+                            </div>
+
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> </p>
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-cloud"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Nubosidad </p>
+                                <p> </p>
+                            </div>
+
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> 95</p>
+                        <div class="col m-2 p-2 textoInformativo">
+
+                            <div class="icono">
+                                <i class="fa-solid fa-wind"></i>
+                            </div>
+
+                            <div class="texto">
+                                <p class="mb-2"> Viento </p>
+                                <p> </p>
+                            </div>
+
                         </div>
                     </div>
 
