@@ -78,8 +78,7 @@ Para ejecutar la aplicación, se tiene que descargar Python y Flask instalados. 
 7. Agregar la clave de la API de OpenWeatherMap:
 
 ``` python
-    'appid': '------' (Línea de código: 141)
-     api_key = '-----' (Linea de codigo: 175)
+     api_key = '-----' (Linea de codigo: 142, 208)
 ```
 
 

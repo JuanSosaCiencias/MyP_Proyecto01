@@ -123,36 +123,6 @@ def mostrar_datos():
     return render_template("mostrar_datos.html", datos=result)
 
 
-
-"""
-    Obtiene datos climáticos a partir de coordenadas geográficas.
-
-    :param float latitud: Latitud de la ubicación.
-    :param float longitud: Longitud de la ubicación.
-    :return: Datos climáticos en formato JSON.
-    :rtype: dict or None
-"""
-
-def obtener_datos_clima(latitud, longitud):
-    url = 'https://api.openweathermap.org/data/2.5/weather'
-    params = {
-        'lat': latitud,
-        'lon': longitud,
-        'appid': '--------',
-        'units': 'metric',
-    }
-
-    response = requests.get(url, params=params)
-
-    if response.status_code == 200:
-        data = response.json()
-        return data
-    else:
-        return None
-
-
-
-
 def actualizar_ciudades():
     """
     Actualiza los datos climáticos de las primeras 52 ciudades en la base de datos 'db_clima2'
