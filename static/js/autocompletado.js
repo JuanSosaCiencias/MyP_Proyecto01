@@ -1,18 +1,13 @@
 
 $(document).ready(function () {
 
-    let lista = ["aty", "alc", "admx", "aas", "datos", "puestos", "al", "ajdfl"];
+
 
     /**
      * Implementacion de pluggin para el autocompletado en boostrap
      * Extraido de: https://www.jqueryscript.net/form/smart-autocomplete-bootstrap.html
-     */
-    $("#inputCiudadOrigen").autofill({
-        values: lista,
-        itemLimit: 4,
-        darkMode: true,
-        minCharacters: 1
-    });
+     * consultado el: 22 de septiembre 
+    */
 
 
     $("#ciudadInputOrigen").on("input", function (e) {
@@ -22,8 +17,14 @@ $(document).ready(function () {
             data: { text: $("#ciudadInputOrigen").val() },
             success: function (res) {
 
+                let ciudades = [];
+
+                $.each(res, function (i, value) {
+                    ciudades.push(value.origin);
+                })
+
                 $("#inputCiudadOrigen").autofill({
-                    values: lista,
+                    values: ciudades,
                     itemLimit: 3,
                     darkMode: true,
                     minCharacters: 1
@@ -40,9 +41,15 @@ $(document).ready(function () {
             data: { text: $("#ciudadInputDestino").val() },
             success: function (res) {
 
+                let ciudades = [];
+
+                $.each(res, function (i, value) {
+                    ciudades.push(value.origin);
+                })
+
                 $("#inputCiudadDestino").autofill({
-                    values: lista,
-                    itemLimit: 3,
+                    values: ciudades,
+                    itemLimit: 8,
                     darkMode: true,
                     minCharacters: 1
                 });
