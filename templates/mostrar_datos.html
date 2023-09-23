@@ -72,247 +72,247 @@
         </g>
     </svg>
 
-    <div class="contenedor">
+    <div class="container-fluid contenedor">
 
-        <div class="contenedor m-2 p-2" id="tabla">
+        <div class="row m-2 p-2">
 
-            <div class="fila m-2 p-2">
+            <div class="col m-5 text-center">
 
-                <div class="container m-5 p-2 text-center text-light" id="columna">
-
-                    <div class="row m-2 p-2">
-                        <div class=" text-center">
-                            <h1 class="tituloCiudad">Ciudad origen </h1>
-                        </div>
+                <div class="row m-2 p-2">
+                    <div class=" text-center">
+                        <h1 class="tituloCiudad">Ciudad origen </h1>
                     </div>
-
-                    <div class="row m-2 p-2">
-                        <div class="col-4 m-2 p-2 align-items-center">
-                            <img src="../static/img/soleado.png" class="mx-auto d-block imagenClima" alt="imagenClima">
-                        </div>
-                        <div class="col m-2 p-2">
-                            <div class="container m-2 p-2 text-center text-light">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1> Clima Principal </h1>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <p class="text-center"> informacion </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col m-2 p-2 textoInformativo">
-
-                            <div class="icono">
-                                <i class="fa-solid fa-temperature-full"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Temperatura maxima </p>
-                                <p> </p>
-                            </div>
-
-                        </div>
-
-                        <div class="col m-2 p-2 textoInformativo">
-
-                            <div class="icono">
-                                <i class="fa-solid fa-temperature-empty"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Temperatura minima </p>
-                                <p> </p>
-                            </div>
-
-                        </div>
-
-                        <div class="col m-2 p-2 textoInformativo">
-
-                            <div class="icono">
-                                <i class="fa-solid fa-cloud-rain"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Lluvia </p>
-                                <p> </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col m-2 p-2 textoInformativo">
-
-                            <div class="icono">
-                                <i class="fa-solid fa-droplet"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Humedad </p>
-                                <p> {{ dato[0].humedad_origen }}% </p>
-                            </div>
-
-                        </div>
-
-                        <div class="col m-2 p-2 textoInformativo">
-
-                            <div class="icono">
-                                <i class="fa-solid fa-cloud"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Nubosidad </p>
-                                <p> </p>
-                            </div>
-
-                        </div>
-
-                        <div class="col m-2 p-2 textoInformativo">
-
-                            <div class="icono">
-                                <i class="fa-solid fa-wind"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Viento </p>
-                                <p> </p>
-                            </div>
-
-                        </div>
-                    </div>
-
                 </div>
 
-
-                <div class="container m-5 p-2 text-center text-light align-items-center" id="columna">
-
-                    <div class="row m-2 p-2">
-                        <div class=" text-center">
-                            <h1 class="tituloCiudad">Ciudad origen </h1>
-                        </div>
+                <div class="row m-2 p-2 justify-content-center">
+                    <div class="col-4 m-2 p-2 d-flex justify-content-center align-items-center">
+                        <img src="../static/img/soleado.png" class="imagenClima" alt="imagenClima">
                     </div>
-
-                    <div class="row m-2 p-2">
-                        <div class="col-4 m-2 p-2 align-items-center">
-                            <img src="../static/img/soleado.png" class="mx-auto d-block imagenClima" alt="imagenClima">
-                        </div>
-                        <div class="col m-2 p-2">
-                            <div class="container m-2 p-2 text-center text-light">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1> Clima Principal </h1>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <p class="text-center"> informacion </p>
+                    <div class="col m-2 p-2">
+                        <div class="container m-2 p-2 text-center text-light">
+                            <div class="row">
+                                <div class="col">
+                                    <h1> Clima Principal </h1>
                                 </div>
                             </div>
+                            <div class="row">
+                                <p class="text-center"> informacion </p>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col m-2 p-2 textoInformativo">
+                <div class="row">
+                    <div class="col m-2 p-2 textoInformativo">
 
-                            <div class="icono">
-                                <i class="fa-solid fa-temperature-full"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Temperatura maxima </p>
-                                <p> </p>
-                            </div>
-
+                        <div class="icono">
+                            <i class="fa-solid fa-temperature-full"></i>
                         </div>
 
-                        <div class="col m-2 p-2 textoInformativo">
-
-                            <div class="icono">
-                                <i class="fa-solid fa-temperature-empty"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Temperatura minima </p>
-                                <p> </p>
-                            </div>
-
+                        <div class="texto">
+                            <p class="mb-2"> Temperatura maxima </p>
+                            <p> </p>
                         </div>
 
-                        <div class="col m-2 p-2 textoInformativo">
-
-                            <div class="icono">
-                                <i class="fa-solid fa-cloud-rain"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Lluvia </p>
-                                <p> </p>
-                            </div>
-
-                        </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col m-2 p-2 textoInformativo">
+                    <div class="col m-2 p-2 textoInformativo">
 
-                            <div class="icono">
-                                <i class="fa-solid fa-droplet"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Humedad </p>
-                                <p> texto </p>
-                            </div>
-
+                        <div class="icono">
+                            <i class="fa-solid fa-temperature-empty"></i>
                         </div>
 
-                        <div class="col m-2 p-2 textoInformativo">
-
-                            <div class="icono">
-                                <i class="fa-solid fa-cloud"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Nubosidad </p>
-                                <p> </p>
-                            </div>
-
+                        <div class="texto">
+                            <p class="mb-2"> Temperatura minima </p>
+                            <p> </p>
                         </div>
 
-                        <div class="col m-2 p-2 textoInformativo">
-
-                            <div class="icono">
-                                <i class="fa-solid fa-wind"></i>
-                            </div>
-
-                            <div class="texto">
-                                <p class="mb-2"> Viento </p>
-                                <p> </p>
-                            </div>
-
-                        </div>
                     </div>
 
+                    <div class="col m-2 p-2 textoInformativo">
 
+                        <div class="icono">
+                            <i class="fa-solid fa-cloud-rain"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Lluvia </p>
+                            <p> </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Humedad </p>
+                            <p> {{ dato[0].humedad_origen }}% </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Nubosidad </p>
+                            <p> </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Viento </p>
+                            <p> </p>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
 
-            <div class="fila m-4 p-2">
+
+            <div class="col text-center m-5" id="columna">
+
+                <div class="row m-2 p-2">
+                    <div class=" text-center">
+                        <h1 class="tituloCiudad">Ciudad origen </h1>
+                    </div>
+                </div>
+
+                <div class="row m-2 p-2 justify-content-center">
+                    <div class="col-4 m-2 p-2  d-flex justify-content-center align-items-center">
+                        <img src="../static/img/soleado.png" class="imagenClima" alt="imagenClima">
+                    </div>
+                    <div class="col m-2 p-2">
+                        <div class="container m-2 p-2 text-center text-light">
+                            <div class="row">
+                                <div class="col">
+                                    <h1> Clima Principal </h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="text-center"> informacion </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-temperature-full"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Temperatura maxima </p>
+                            <p> </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-temperature-empty"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Temperatura minima </p>
+                            <p> </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-cloud-rain"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Lluvia </p>
+                            <p> </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Humedad </p>
+                            <p> texto </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Nubosidad </p>
+                            <p> </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Viento </p>
+                            <p> </p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="row m-4 p-2">
+            <div class="text-center">
+
                 <button type="submit" class="btn btn-lg text-light fs-1" onclick="window.location.href = 'index.html'"
                     id="nuevaConsulta">
                     Hacer otra consulta
                 </button>
             </div>
-
-            <button id="botonMagico"> magia </button>
-            <button id="botonMagico2"> magia </button>
-
         </div>
+
+        <button id="botonMagico"> magia </button>
+        <button id="botonMagico2"> magia </button>
+
 
 
 

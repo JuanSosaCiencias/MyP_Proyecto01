@@ -27,7 +27,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@300;500;700&display=swap"
-    rel="stylesheet" </head>
+    rel="stylesheet">
+
+</head>
 
 <body>
 
@@ -62,15 +64,16 @@
     </g>
   </svg>
 
-  <div class="container contenedor">
-    <div class="container px-4 rounded p-2 text-light" style="margin-top: 80px;">
+  <div class="contenedor">
 
-      <div class="row text-center p-2 m-2">
-        <h1 style="font-size: 150px;"> Web APP </h1>
+
+    <div class="container p-2 text-center" style="margin-top: 80px;">
+
+      <div class="row text-light" text-center text-light m-2 p-2>
+        <div class="row text-center p-2 mb-5">
+          <h1 style="font-size: 150px;"> Web APP </h1>
+        </div>
       </div>
-    </div>
-
-    <div class="container p-2 rounded text-center" style="margin-top: 80px;">
 
       <div class="row text-center text-light m-2 p-2">
 
@@ -95,9 +98,9 @@
         <div class="col text-center text-light" id="entradaCiudad">
           <div class="m-2 p-2">
             <form class="needs-validation" action="/mostrar_datos" method="POST" id="ciudadOrigenInput" novalidate>
-              <div class="mb-3">
+              <div class="m-0">
                 <label class="form-label text-light">
-                  <p class="fs-1" id="textoModoSeleccion">Ciudad de origen</p>
+                  <p class="fs-1 m-0">Ciudad origen</p>
                 </label>
                 <input type="text" class="form-control entradaCiudad" list="listaCiudades" id="inputCiudadOrigen"
                   required>
@@ -105,9 +108,9 @@
                   <p class="fs-5"> Ingresa una ciudad de origen </p>
                 </div>
               </div>
-              <div class="mb-3">
+              <div class="mt-5">
                 <label class="form-label text-light">
-                  <p class="fs-1" id="textoModoSeleccion">Ciudad de destino</p>
+                  <p class="fs-1 m-0">Ciudad destino</p>
                 </label>
                 <input type="text" class="form-control entradaCiudad" id="listCiudades" id="inputCiudadDestino"
                   autocomplete="off" required>
@@ -115,7 +118,7 @@
                   <p class="fs-5"> Ingresa una ciudad de destino </p>
                 </div>
               </div>
-              <button type="submit" class="btn btn-dark btn-lg text-light"> Enviar </button>
+              <button type="submit" class="btn btn-dark btn-lg text-light mt-5"> Enviar </button>
 
               <datalist class="list" id="listaCiudades">
                 <div class="option"> Monterry</div>
