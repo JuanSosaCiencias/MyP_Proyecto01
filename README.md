@@ -18,15 +18,60 @@ Esta carpeta contiene los archivos estáticos utilizados para la interfaz de usu
 ### templates
 En esta carpeta se encuentran los archivos HTML que conforman las páginas web de la aplicación. Hay dos plantillas principales:
 
-1. `formulario.html`: Esta plantilla se utiliza para recopilar información de los usuarios a través de un formulario.
-2. `mostrar_datos.html`: Aquí se muestran los resultados de las búsquedas de vuelos y datos meteorológicos.
+1. `index.html`: Esta plantilla se utiliza para recopilar información de los usuarios a través de un formulario.
+2. `mostrar_datos.html`: Aquí se muestran los resultados de las búsquedas y datos meteorológicos.
+
+## Requisitos
+
+Asegúrate de tener instalados los siguientes requisitos en tu sistema:
+
+- Python 3
+- pip (administrador de paquetes de Python)
+- MySQL (base de datos)
+- Cuenta de OpenWeatherMap API y su clave de API
 
 ## Uso
 Para ejecutar la aplicación, se tiene que descargar Python y Flask instalados. Luego, sigue estos pasos:
 
-1. Configurar la base de datos MySQL y que la configuración en `app.py` coincida con la del servidor de la Base de Datos.
-2. Ejecuta `app.py` utilizando el comando `python app.py`.
-3. Abre un navegador web y ve a la dirección `http://localhost:5000` para acceder a la aplicación.
+1. Clona el repositorio desde la terminal:
+    git clone https://github.com/JuanSosaCiencias/MyP_Proyecto01.git
+
+2. Crear un entorno virtual desde la carpeta del proyecto:
+    $ cd MyP_Proyecto01
+    $ python -m venv venv
+
+3. Activar el entorno virtual desde la carpeta del proyecto:
+    $ venv \ Scripts \ activate  ó  source venv/bin/activate 
+
+4. Instalar las dependencias del proyecto: `requirements.txt`
+    $ pip install -r requirements.txt
+
+5. Instalar BackgroundScheduler:
+    $pip install apscheduler
+
+5. Importar la base de datos `db_clima2.sql` desde tu BD preferida.
+
+6. Configura la base de datos: 
+    Desde el archivo `app.py` agrega la configuració de la base de datos:
+
+        app.config["MYSQL_HOST"] = "localhost"
+        app.config["MYSQL_USER"] = "root"
+        app.config["MYSQL_PASSWORD"] = "tucontraseña"
+        app.config["MYSQL_DB"] = "db_clima"
+
+        ESTÄS APARECERAN EN LAS LÍNEAS DE CÓDIGO: 10, 238 y 306  
+
+7. Agregar la clave de la API de OpenWeatherMap:
+    'appid': '------' (Línea de código: 141)
+     api_key = '-----' (Linea de codigo: 175)
+
+
+## Pasos para ejecutar la página:
+- Asegurate de que su base de datos este en funcionamiento
+- Ejecutar la aplicación Flask:
+    python app.py
+Esto ejecutara un 'http://localhost:5000', esto lo tendras que abir desde tu navegador
+
 
 ## Funcionalidades Principales
 La aplicación ofrece las siguientes funcionalidades:
