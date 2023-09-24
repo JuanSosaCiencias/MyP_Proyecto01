@@ -35,6 +35,7 @@ svg {
 
 .contenedor {
     position: absolute;
+    z-index: 1;
 }
 
 .imagenClima {

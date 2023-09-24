@@ -11,7 +11,7 @@ const imgTormenta = "../static/img/tormenta.png";
 const imgNevado = "../static/img/nevado.png";
 const imgNiebla = "../static/img/niebla.png";
 
-const imgDefault = "";
+const imgDefault = "../static/img/climaPrincipal.png";
 
 const imgOrigen = "#imgClimaOrigen";
 
@@ -169,49 +169,12 @@ $(document).ready(function () {
     }
 
 
-    let climaOrigen = "{{  }}";
+    let climaOrigen = "03d";
 
-    let climaDestino = "{{  }}"
-
-
-    $("#botonMagico1").on("click", function () {
-        climaDestino = "01d";
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico2").on("click", function () {
-        climaDestino = "02d";
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico3").on("click", function () {
-        climaDestino = "03d";
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico4").on("click", function () {
-        climaDestino = "04d";
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico5").on("click", function () {
-        climaDestino = "09d";
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico6").on("click", function () {
-        climaDestino = "10d";
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico7").on("click", function () {
-        climaDestino = "11d";
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico8").on("click", function () {
-        climaDestino = "13d";
-        ajustaEstiloPagina(climaDestino);
-    });
-    $("#botonMagico9").on("click", function () {
-        climaDestino = "50d";
-        ajustaEstiloPagina(climaDestino);
-    });
+    let climaDestino = $('#origenDestino').data();
 
 
+    ajustaEstiloPagina(climaDestino);
 
     /**
      * Cambia todo el diseño de la pagina en base al clima

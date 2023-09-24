@@ -28,17 +28,11 @@
 
     <link rel="icon" href="../static/img/climaPrincipal.png" type="imagen/icono">
 
-
-
-
 </head>
 
 <body>
 
     {% for dato in datos %}
-
-    <meta id="fruta" data-fruta="{{ climaOrigen }}">
-    <meta id="fruta" data-fruta="{{ climaDestino }}">
 
     <!-- Animacion sacada de la pagina Animated Backgrouns, consultada el 20 de semptiembre-->
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -187,7 +181,7 @@
             </div>
 
 
-            
+
 
         </div>
 
@@ -199,16 +193,7 @@
             </div>
         </div>
 
-        <button id="botonMagico1"> soleado </button>
-        <button id="botonMagico2"> pocasNubes </button>
-        <button id="botonMagico3"> unaNube </button>
-        <button id="botonMagico4"> nublado </button>
-        <button id="botonMagico5"> lluvia </button>
-        <button id="botonMagico6"> lluvia2 </button>
-        <button id="botonMagico7"> tormenta </button>
-        <button id="botonMagico8"> nevado</button>
-        <button id="botonMagico9"> niebla </button>
-
+        <meta id="climaDestino" data-fruta="{{ dato.icono}}">
 
         <script src="../static/js/fondoMostrarClima.js"></script>
 
