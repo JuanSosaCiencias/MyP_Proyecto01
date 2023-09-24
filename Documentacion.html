@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Puma Weather</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Puma Weather</strong></big></big> (version 1.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/juansosa/Documents/Semestre_III/modelado_y_programacion/MyP_Proyecto01/app.py">/home/juansosa/Documents/Semestre_III/modelado_y_programacion/MyP_Proyecto01/app.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pymysql.html">pymysql</a><br>
+</td><td width="25%" valign=top><a href="requests.html">requests</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-actualizar_ciudad_db"><strong>actualizar_ciudad_db</strong></a>(iata, temperatura, clima_principal, icono, descripcion_clima, sentimiento, temperatura_max, temperatura_min, humedad, velocidad_viento, angulo_viento, lluvia, nubes)</dt><dd><tt>Actualiza&nbsp;los&nbsp;datos&nbsp;de&nbsp;una&nbsp;ciudad&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;'data_1'.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;iata&nbsp;(str):&nbsp;El&nbsp;código&nbsp;IATA&nbsp;de&nbsp;la&nbsp;ciudad&nbsp;que&nbsp;se&nbsp;actualizará.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;temperatura&nbsp;(float):&nbsp;La&nbsp;temperatura&nbsp;actual&nbsp;en&nbsp;grados&nbsp;Celsius.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clima_principal&nbsp;(str):&nbsp;El&nbsp;clima&nbsp;principal&nbsp;en&nbsp;la&nbsp;ciudad.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;icono&nbsp;(str):&nbsp;El&nbsp;icono&nbsp;que&nbsp;representa&nbsp;el&nbsp;clima.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;descripcion_clima&nbsp;(str):&nbsp;Descripción&nbsp;detallada&nbsp;del&nbsp;clima.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sentimiento&nbsp;(str):&nbsp;Sentimiento&nbsp;asociado&nbsp;al&nbsp;clima.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;temperatura_max&nbsp;(float):&nbsp;Temperatura&nbsp;máxima&nbsp;en&nbsp;grados&nbsp;Celsius.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;temperatura_min&nbsp;(float):&nbsp;Temperatura&nbsp;mínima&nbsp;en&nbsp;grados&nbsp;Celsius.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;humedad&nbsp;(float):&nbsp;Humedad&nbsp;en&nbsp;porcentaje.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;velocidad_viento&nbsp;(float):&nbsp;Velocidad&nbsp;del&nbsp;viento&nbsp;en&nbsp;metros&nbsp;por&nbsp;segundo.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;angulo_viento&nbsp;(float):&nbsp;Ángulo&nbsp;del&nbsp;viento&nbsp;en&nbsp;grados.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lluvia&nbsp;(float):&nbsp;Cantidad&nbsp;de&nbsp;lluvia&nbsp;en&nbsp;milímetros.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nubes&nbsp;(float):&nbsp;Porcentaje&nbsp;de&nbsp;cobertura&nbsp;de&nbsp;nubes.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</tt></dd></dl>
+ <dl><dt><a name="-actualizar_ciudades"><strong>actualizar_ciudades</strong></a>()</dt><dd><tt>Actualiza&nbsp;los&nbsp;datos&nbsp;climáticos&nbsp;de&nbsp;las&nbsp;primeras&nbsp;52&nbsp;ciudades&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;'data_1'<br>
+utilizando&nbsp;la&nbsp;API&nbsp;de&nbsp;OpenWeatherMap.<br>
+&nbsp;<br>
+La&nbsp;función&nbsp;obtiene&nbsp;las&nbsp;coordenadas&nbsp;de&nbsp;latitud&nbsp;y&nbsp;longitud&nbsp;de&nbsp;cada&nbsp;ciudad&nbsp;desde&nbsp;la&nbsp;base&nbsp;de&nbsp;datos<br>
+y&nbsp;luego&nbsp;realiza&nbsp;solicitudes&nbsp;a&nbsp;la&nbsp;API&nbsp;de&nbsp;OpenWeatherMap&nbsp;para&nbsp;obtener&nbsp;los&nbsp;datos&nbsp;climáticos.<br>
+Los&nbsp;datos&nbsp;climáticos&nbsp;se&nbsp;actualizan&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;utilizando&nbsp;la&nbsp;función&nbsp;'actualizar_ciudad_db'.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</tt></dd></dl>
+ <dl><dt><a name="-autocompletadorDestino"><strong>autocompletadorDestino</strong></a>()</dt><dd><tt>Ruta&nbsp;para&nbsp;realizar&nbsp;autocompletado&nbsp;de&nbsp;ciudades&nbsp;de&nbsp;destino.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;text:&nbsp;Texto&nbsp;de&nbsp;búsqueda.<br>
+:return:&nbsp;Respuesta&nbsp;JSON&nbsp;con&nbsp;resultados&nbsp;de&nbsp;autocompletado.<br>
+:rtype:&nbsp;dict</tt></dd></dl>
+ <dl><dt><a name="-autocompletadorOrigen"><strong>autocompletadorOrigen</strong></a>()</dt><dd><tt>Ruta&nbsp;para&nbsp;realizar&nbsp;autocompletado&nbsp;de&nbsp;ciudades&nbsp;de&nbsp;origen.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;text:&nbsp;Texto&nbsp;de&nbsp;búsqueda.<br>
+:return:&nbsp;Respuesta&nbsp;JSON&nbsp;con&nbsp;resultados&nbsp;de&nbsp;autocompletado.<br>
+:rtype:&nbsp;dict</tt></dd></dl>
+ <dl><dt><a name="-error404"><strong>error404</strong></a>()</dt></dl>
+ <dl><dt><a name="-index"><strong>index</strong></a>()</dt><dd><tt>Ruta&nbsp;de&nbsp;inicio&nbsp;de&nbsp;la&nbsp;aplicación.<br>
+&nbsp;<br>
+:return:&nbsp;Renderiza&nbsp;el&nbsp;template&nbsp;"index.html"&nbsp;con&nbsp;un&nbsp;mensaje&nbsp;a&nbsp;la&nbsp;conexión&nbsp;a&nbsp;la&nbsp;base&nbsp;de&nbsp;datos.<br>
+:rtype:&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-mostrar_datos"><strong>mostrar_datos</strong></a>()</dt><dd><tt>Ruta&nbsp;para&nbsp;mostrar&nbsp;datos&nbsp;de&nbsp;acuerdo&nbsp;a&nbsp;la&nbsp;búsqueda.<br>
+&nbsp;<br>
+:param&nbsp;str&nbsp;num_ticket:&nbsp;Número&nbsp;de&nbsp;ticket&nbsp;a&nbsp;buscar.<br>
+:param&nbsp;str&nbsp;ciudad_origen:&nbsp;Ciudad&nbsp;de&nbsp;origen&nbsp;a&nbsp;buscar.<br>
+:param&nbsp;str&nbsp;ciudad_destino:&nbsp;Ciudad&nbsp;de&nbsp;destino&nbsp;a&nbsp;buscar.<br>
+:return:&nbsp;Renderiza&nbsp;el&nbsp;template&nbsp;"mostrar_datos.html"&nbsp;con&nbsp;los&nbsp;resultados&nbsp;de&nbsp;la&nbsp;búsqueda.<br>
+:rtype:&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-not_found"><strong>not_found</strong></a>(error)</dt><dd><tt>Esta&nbsp;función&nbsp;se&nbsp;encarga&nbsp;de&nbsp;presentar&nbsp;la&nbsp;pagina&nbsp;de&nbsp;error&nbsp;404.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;404.html</tt></dd></dl>
+ <dl><dt><a name="-obtener_primeras_52_ciudades_desde_bd"><strong>obtener_primeras_52_ciudades_desde_bd</strong></a>()</dt><dd><tt>Esta&nbsp;función&nbsp;se&nbsp;encarga&nbsp;de&nbsp;obtener&nbsp;las&nbsp;primeras&nbsp;52&nbsp;ciudades&nbsp;desde&nbsp;una&nbsp;base&nbsp;de&nbsp;datos&nbsp;llamada&nbsp;'data_1'.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Una&nbsp;lista&nbsp;de&nbsp;diccionarios,&nbsp;donde&nbsp;cada&nbsp;diccionario&nbsp;representa&nbsp;una&nbsp;ciudad&nbsp;con&nbsp;sus&nbsp;datos.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cada&nbsp;diccionario&nbsp;contiene&nbsp;columnas&nbsp;de&nbsp;la&nbsp;tabla&nbsp;'ciudades'&nbsp;como&nbsp;claves.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;ocurre&nbsp;un&nbsp;error,&nbsp;retorna&nbsp;una&nbsp;lista&nbsp;vacía.</tt></dd></dl>
+ <dl><dt><a name="-translate_text"><strong>translate_text</strong></a>(text, target_language='es')</dt><dd><tt>Traduce&nbsp;un&nbsp;texto&nbsp;dado&nbsp;a&nbsp;un&nbsp;idioma&nbsp;objetivo&nbsp;utilizando&nbsp;el&nbsp;servicio&nbsp;de&nbsp;traducción.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;text&nbsp;(str):&nbsp;El&nbsp;texto&nbsp;que&nbsp;se&nbsp;desea&nbsp;traducir.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;target_language&nbsp;(str,&nbsp;opcional):&nbsp;El&nbsp;idioma&nbsp;al&nbsp;que&nbsp;se&nbsp;desea&nbsp;traducir&nbsp;el&nbsp;texto.&nbsp;Por&nbsp;defecto,&nbsp;es&nbsp;'es'&nbsp;(español).<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;El&nbsp;texto&nbsp;traducido&nbsp;al&nbsp;idioma&nbsp;objetivo.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Exception:&nbsp;Se&nbsp;produce&nbsp;una&nbsp;excepción&nbsp;general&nbsp;si&nbsp;la&nbsp;traducción&nbsp;no&nbsp;se&nbsp;puede&nbsp;realizar.<br>
+&nbsp;<br>
+Note:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;el&nbsp;texto&nbsp;contiene&nbsp;la&nbsp;palabra&nbsp;"clear"&nbsp;(en&nbsp;minúsculas),&nbsp;se&nbsp;proporciona&nbsp;una&nbsp;traducción&nbsp;personalizada&nbsp;como&nbsp;"Despejado".<br>
+&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-translate_text">translate_text</a>("Hello,&nbsp;world!",&nbsp;target_language='fr')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'Bonjour,&nbsp;le&nbsp;monde!'</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>app</strong> = &lt;Flask 'app'&gt;<br>
+<strong>mysql</strong> = &lt;flask_mysqldb.MySQL object&gt;<br>
+<strong>request</strong> = &lt;LocalProxy unbound&gt;</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Canekitas</td></tr></table>
+</body></html>

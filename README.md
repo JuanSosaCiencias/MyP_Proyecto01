@@ -70,7 +70,7 @@ Windows:
     $ pip install apscheduler
 ```
 
-5. Importar la base de datos `data_1.sql` desde tu BD preferida.
+5. Importar la base de datos `data_1.sql` desde tu BD preferida. Y nombrala data_clima.
 
 6. Configura la base de datos: 
     Desde el archivo `app.py` agrega la configuración de la base de datos:
@@ -78,9 +78,9 @@ Windows:
         app.config["MYSQL_HOST"] = "localhost"
         app.config["MYSQL_USER"] = "root"
         app.config["MYSQL_PASSWORD"] = "tucontraseña"
-        app.config["MYSQL_DB"] = "db_clima"
+        app.config["MYSQL_DB"] = "data_clima"
 
-        ESTÄS APARECERAN EN LAS LÍNEAS DE CÓDIGO: 10, 258 y 315  
+        ESTAS APARECERAN EN LAS LÍNEAS DE CÓDIGO: 11, 233 y 290  
 
 7. Agregar la clave de la API de OpenWeatherMap:
 
@@ -124,5 +124,17 @@ Para obtener datos meteorológicos, la aplicación se conecta a la API de OpenWe
 
 # Roles de trabajo
 
-* Gael y Antonio. Trabajar en el Frontend 
-* Mike y Mario. Trabajar en el Backend
+* Gael y Antonio. Frontend 
+* Mike y Mario. Backend
+
+# Ideas de diseños y recursos 
+En esta carpeta incluiremos todos los recursos online que encontremos, para el futuro diseño de
+nuestra pagina web.
+
+# Recursos Online
+* https://www.pexels.com/es-es/  Imagenes sin copyright.
+* https://www.flaticon.es/ Iconos PNG para la pagina.
+* https://xsgames.co/animatiss/ Animaciones CSS 
+* https://animatedbackgrounds.me/ Fondos animados CSS  
+* https://fonts.google.com/   Fuentes de texto gratuitas para pagina web.
+* https://acorn.firefox.com/latest/acorn-aRSAh0Sp Diseno de componentes de pagina web
