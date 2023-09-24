@@ -3,6 +3,7 @@ from flask_mysqldb import MySQL
 import pymysql, requests
 from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
+from googletrans import Translator
 app = Flask(__name__)
 mysql = MySQL(app)
 
@@ -123,6 +124,39 @@ def mostrar_datos():
     return render_template("mostrar_datos.html", datos=result)
 
 
+def translate_text(text, target_language='es'):
+    """
+    Traduce un texto dado a un idioma objetivo utilizando el servicio de traducción.
+
+    Args:
+        text (str): El texto que se desea traducir.
+        target_language (str, opcional): El idioma al que se desea traducir el texto. Por defecto, es 'es' (español).
+
+    Returns:
+        str: El texto traducido al idioma objetivo.
+
+    Raises:
+        Exception: Se produce una excepción general si la traducción no se puede realizar.
+    
+    Note:
+        Si el texto contiene la palabra "clear" (en minúsculas), se proporciona una traducción personalizada como "Despejado".
+
+    Example:
+        >>> translate_text("Hello, world!", target_language='fr')
+        'Bonjour, le monde!'
+    """
+    try:
+        translator = Translator()
+        translated_text = translator.translate(text, dest=target_language)
+        return translated_text.text
+    except Exception as e:
+        if "clear" in text.lower():
+            return "Despejado"  # Proporciona una traducción personalizada para "clear"
+        else:
+            print(f"Error al traducir: {e}")
+            return None
+
+
 def actualizar_ciudades():
     """
     Actualiza los datos climáticos de las primeras 52 ciudades en la base de datos 'db_clima2'
@@ -166,9 +200,9 @@ def actualizar_ciudades():
             actualizar_ciudad_db(
                 ciudad['iata'], 
                 temperatura, 
-                clima_principal, 
+                translate_text(clima_principal), 
                 icono, 
-                descripcion_clima, 
+                translate_text(descripcion_clima), 
                 sentimiento, 
                 temperatura_max, 
                 temperatura_min, 
