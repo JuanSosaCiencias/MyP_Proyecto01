@@ -106,6 +106,12 @@ La aplicación utiliza las siguientes dependencias externas:
 ## API de OpenWeatherMap
 Para obtener datos meteorológicos, la aplicación se conecta a la API de OpenWeatherMap. Debes proporcionar tu propia clave de API en el archivo `app.py` para que funcione correctamente.
 
+## Documentación: 
+
+- Python: https://docs.python.org/
+- Flask: https://flask.palletsprojects.com/ 
+- https://dev.mysql.com/doc/connector-python/en/
+
 
 
 
