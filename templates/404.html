@@ -18,11 +18,14 @@ consultada: 23 de septiembre 2023 -->
         <h3>Datos no encontrados <span>SPACE</span> Introduzca un vuelo válido porfavor.</h3>
         <img id="astronaut" src="../../static/img/astronaut.svg" />
         <img id="planet" src="../../static/img/planet.svg" />
-        <a href="index.html"><button class="denied__link">Regresar a Inicio</button></a>
+        <form action="{{ url_for('index') }}" method="get">
+            <button type="submit" class="btn btn-lg fs-1 fondoTexto">
+                Hacer otra consulta
+            </button>
+        </form>
     </div>
 
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.4/tsparticles.bundle.min.js"></script>
     <script type="text/javascript" src="../../static/js/404.js"></script>
-
 </html>

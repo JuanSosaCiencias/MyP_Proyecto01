@@ -11,6 +11,10 @@ app.config["MYSQL_USER"] = "root"
 app.config["MYSQL_PASSWORD"] = "11julio2004"
 app.config["MYSQL_DB"] = "test2"
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
+
+@app.route("/error404")
+def error404():
+    abort(404)
  
 @app.route("/")
 def index():
@@ -107,39 +111,10 @@ def mostrar_datos():
         cursor.close()
     else:
         result = None
+    if result is None:
+        return render_template("404.html")
     return render_template("mostrar_datos.html", datos=result)
-
-def translate_text(text, target_language='es'):
-    """
-    Traduce un texto dado a un idioma objetivo utilizando el servicio de traducción.
-
-    Args:
-        text (str): El texto que se desea traducir.
-        target_language (str, opcional): El idioma al que se desea traducir el texto. Por defecto, es 'es' (español).
-
-    Returns:
-        str: El texto traducido al idioma objetivo.
-
-    Raises:
-        Exception: Se produce una excepción general si la traducción no se puede realizar.
     
-    Note:
-        Si el texto contiene la palabra "clear" (en minúsculas), se proporciona una traducción personalizada como "Despejado".
-
-    Example:
-        >>> translate_text("Hello, world!", target_language='fr')
-        'Bonjour, le monde!'
-    """
-    try:
-        translator = Translator()
-        translated_text = translator.translate(text, dest=target_language)
-        return translated_text.text
-    except Exception as e:
-        if "clear" in text.lower():
-            return "Despejado"  # Proporciona una traducción personalizada para "clear"
-        else:
-            print(f"Error al traducir: {e}")
-            return None
 
 def translate_text(text, target_language='es'):
     """
@@ -193,7 +168,7 @@ def actualizar_ciudades():
     for ciudad in ciudades:
         latitud = ciudad['latitud']  
         longitud = ciudad['longitud']
-        api_key = 'c3e07acba8b46dc883ed33bff4b135d2'
+        api_key = 'abfb7b76d9fee596b6088e13fac2daa5'
         url = f'https://api.openweathermap.org/data/2.5/weather?lat={latitud}&lon={longitud}&appid={api_key}&units=metric'
         response = requests.get(url)
 
@@ -327,9 +302,22 @@ def obtener_primeras_52_ciudades_desde_bd():
         print(f"Error al obtener las primeras 52 ciudades: {str(e)}")
         return []
 
+    
+@app.errorhandler(404)
+
+def not_found(error):
+    """
+    Esta función se encarga de presentar la pagina de error 404.
+    
+    Returns:
+        404.html
+    """  
+    return render_template('404.html'), 404    
+
 if __name__ == "__main__":
     actualizar_ciudades()
     scheduler = BackgroundScheduler()
     scheduler.add_job(actualizar_ciudades, 'interval', minutes=10)
     scheduler.start()
     app.run()
+

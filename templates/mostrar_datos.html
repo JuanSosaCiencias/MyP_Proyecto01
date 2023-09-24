@@ -187,16 +187,17 @@
 
         <div class="row m-4 p-2">
             <div class="text-center">
-                <button type="submit" class="btn btn-lg fs-1 fondoTexto" onclick="window.location.href = 'index.html'">
-                    Hacer otra consulta
-                </button>
+                <form action="{{ url_for('index') }}" method="get">
+                    <button type="submit" class="btn btn-lg fs-1 fondoTexto">
+                        Hacer otra consulta
+                    </button>
+                </form>
             </div>
         </div>
 
         <meta id="climaDestino" data-fruta="{{ dato.icono}}">
 
         <script src="../static/js/fondoMostrarClima.js"></script>
-
         {% endfor %}
 </body>
 
