@@ -1,39 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-<<<<<<< HEAD
-    overflow: hidden;
-    min-height: 100vh;
-    position: relative;
-}
-
-/*
-div {
-    border: solid 1px black;
-}
-*/
-
-
-/* https://stackoverflow.com/questions/15884102/bootstrap-how-do-i-change-the-width-of-the-container */
-@media (min-width: 1200px) {
-    .container {
-        max-width: 700px;
-    }
-}
-
-/* Animacion sacada de la pagina Animated Backgrouns */
-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    display: block;
-
-    background-image: linear-gradient(to bottom, rgba(19, 18, 18, 0.86), #8d868a);
-
-=======
     min-height: 100vh;
     position: relative;
     background-image: linear-gradient(to bottom, rgba(113, 201, 212, 0.86), #d2d6d6);
@@ -42,9 +9,8 @@ svg {
     color: black;
 }
 
-
 /* https://stackoverflow.com/questions/15884102/bootstrap-how-do-i-change-the-width-of-the-container 
-consultado: 21 de septiemnbre*/
+consultado: 21 de septiemnbre. Usuario GitHub: mcbjam.*/
 @media (min-width: 1200px) {
     .container {
         max-width: 800px;
@@ -64,58 +30,18 @@ svg {
     display: block;
 
     background-image: linear-gradient(to bottom, rgba(113, 201, 212, 0.86), #d2d6d6);
->>>>>>> back-end
 }
 
 .contenedor {
     position: absolute;
-<<<<<<< HEAD
-    width: 100%;
-    height: 80%;
-}
-
-#imagenClima {
-=======
-    z-index: 1;
 }
 
 .imagenClima {
->>>>>>> back-end
     width: 100px;
     height: 100px;
 }
 
 
-<<<<<<< HEAD
-#container1 #container2 {
-    flex: 1;
-}
-
-#otraConsulta {
-    flex: 2;
-}
-
-#btnOtraConsulta {
-    height: 100px;
-    width: 450px;
-}
-
-.tabla {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.fila {
-    display: flex;
-    justify-content: center;
-}
-
-.columna {
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-=======
 .textoInformativo {
     display: flex;
     align-items: center;
@@ -148,5 +74,4 @@ svg {
 
 .fondoTexto {
     background-color: rgb(103, 189, 205);
->>>>>>> back-end
 }

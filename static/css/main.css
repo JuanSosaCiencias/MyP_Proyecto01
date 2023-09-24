@@ -2,19 +2,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
-  overflow: hidden;
-  min-height: 100vh;
-  position: relative;
-}
-
-/* Animacion sacada de la pagina Animated Backgrouns */
-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-=======
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
   font-family: 'Roboto', sans-serif;
@@ -29,26 +16,12 @@ svg {
   top: 0;
   left: 0;
   width: 100vw;
->>>>>>> back-end
   height: 100%;
   box-sizing: border-box;
   display: block;
 
-<<<<<<< HEAD
-
   background-color: #0e4166;
   background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
-
-
-  /*
-  background-color: #580303;
-  background-image: linear-gradient(to bottom, rgba(150, 34, 34, 0.86), #630b37);
-  */
-
-=======
-  background-color: #0e4166;
-  background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
->>>>>>> back-end
 }
 
 .contenedor {
@@ -58,24 +31,6 @@ svg {
 }
 
 
-<<<<<<< HEAD
-
-.contenedorPadre {
-  bottom: 30%;
-}
-
-
-/* https://stackoverflow.com/questions/22196587/how-to-vertically-center-a-container-in-bootstrap 
-docuemntar este comentario de stack overflow */
-.centrar {
-  min-height: 100%;
-  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh;
-  /* These two lines are counted as one :-)       */
-
-  display: flex;
-  align-items: center;
-=======
 .centrar {
   min-height: 100%;
   min-height: 100vh;
@@ -87,5 +42,4 @@ docuemntar este comentario de stack overflow */
 button {
   width: 150px;
   height: 50px;
->>>>>>> back-end
 }

@@ -1,6 +1,11 @@
+/** Pagina de estilos de error 404 de: https://github.com/tsparticles/404-templates/blob/main/space/js/404.js
+Usuario: tsParticles
+consultada: 23 de septiembre 2023 **/
+
+
 @import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700,800");
 
-/** Styles for the 403 Page **/
+/** Pagina de estilos para error 404. **/
 
 .particle-error,
 .permission_denied,
