@@ -47,9 +47,16 @@ Para ejecutar la aplicación, se tiene que descargar Python y Flask instalados. 
 ```
 3. Activar el entorno virtual desde la carpeta del proyecto:
 
+Linux:
 ```bash
-    $ venv \ Scripts \ activate  ó  source venv/bin/activate 
+    $ source venv/bin/activate 
 ```
+
+Windows:
+```bash
+    $ venv\Scripts\activate 
+```
+
 
 4. Instalar las dependencias del proyecto: `requirements.txt`
 
@@ -63,22 +70,22 @@ Para ejecutar la aplicación, se tiene que descargar Python y Flask instalados. 
     $ pip install apscheduler
 ```
 
-5. Importar la base de datos `db_clima2.sql` desde tu BD preferida.
+5. Importar la base de datos `data_1.sql` desde tu BD preferida.
 
 6. Configura la base de datos: 
-    Desde el archivo `app.py` agrega la configuració de la base de datos:
+    Desde el archivo `app.py` agrega la configuración de la base de datos:
 
         app.config["MYSQL_HOST"] = "localhost"
         app.config["MYSQL_USER"] = "root"
         app.config["MYSQL_PASSWORD"] = "tucontraseña"
         app.config["MYSQL_DB"] = "db_clima"
 
-        ESTÄS APARECERAN EN LAS LÍNEAS DE CÓDIGO: 10, 238 y 306  
+        ESTÄS APARECERAN EN LAS LÍNEAS DE CÓDIGO: 10, 258 y 315  
 
 7. Agregar la clave de la API de OpenWeatherMap:
 
 ``` python
-     api_key = '-----' (Linea de codigo: 142, 208)
+     api_key = '-----' (Linea de codigo: 196, 208)
 ```
 
 
