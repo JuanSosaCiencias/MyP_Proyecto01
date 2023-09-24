@@ -29,12 +29,16 @@
     <link rel="icon" href="../static/img/climaPrincipal.png" type="imagen/icono">
 
 
-    <meta id="fruta" data-fruta="{{ climaOrigen }}">
-    <meta id="fruta" data-fruta="{{ climaDestino }}">
+
 
 </head>
 
 <body>
+
+    {% for dato in datos %}
+
+    <meta id="fruta" data-fruta="{{ climaOrigen }}">
+    <meta id="fruta" data-fruta="{{ climaDestino }}">
 
     <!-- Animacion sacada de la pagina Animated Backgrouns, consultada el 20 de semptiembre-->
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -75,7 +79,7 @@
 
                 <div class="row m-2 p-2">
                     <div class=" text-center">
-                        <h1 class="tituloCiudad fondoTexto"> {{ }} </h1>
+                        <h1 class="tituloCiudad fondoTexto"> {{ dato.nombre }} </h1>
                     </div>
                 </div>
 
@@ -88,11 +92,11 @@
                         <div class="container m-2 p-2 text-center">
                             <div class="row">
                                 <div class="col">
-                                    <h1> {{}}</h1>
+                                    <h1> {{ dato.clima_principal}}</h1>
                                 </div>
                             </div>
                             <div class="row">
-                                <p class="text-center"> {{}} </p>
+                                <p class="text-center"> {{ dato.descripcion_clima }} </p>
                             </div>
                         </div>
                     </div>
@@ -107,7 +111,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Temperatura maxima </p>
-                            <p> {{}}°</p>
+                            <p> {{dato.temperatura_max }}°</p>
                         </div>
 
                     </div>
@@ -120,7 +124,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Temperatura minima </p>
-                            <p> {{}}° </p>
+                            <p> {{dato.temperatura_min}}° </p>
                         </div>
 
                     </div>
@@ -133,7 +137,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Lluvia </p>
-                            <p> {{}}% </p>
+                            <p> {{dato.lluvia}}% </p>
                         </div>
 
                     </div>
@@ -148,7 +152,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Humedad </p>
-                            <p> {{ }}% </p>
+                            <p> {{ dato.humedad }}% </p>
                         </div>
 
                     </div>
@@ -161,7 +165,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Nubes</p>
-                            <p> {{ }} %</p>
+                            <p> {{dato.nubes }} %</p>
                         </div>
 
                     </div>
@@ -174,7 +178,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Viento </p>
-                            <p>{{}}km/h</p>
+                            <p>{{ dato.velocidad_viento }}km/h</p>
                         </div>
 
                     </div>
@@ -187,7 +191,7 @@
 
                 <div class="row m-2 p-2">
                     <div class=" text-center">
-                        <h1 class="tituloCiudad fondoTexto"> {{}}</h1>
+                        <h1 class="tituloCiudad fondoTexto"> {{ dato.nombre }}</h1>
                     </div>
                 </div>
 
@@ -200,11 +204,11 @@
                         <div class="container m-2 p-2 text-center">
                             <div class="row">
                                 <div class="col">
-                                    <h1> {{}} </h1>
+                                    <h1> {{ dato.clima_principal }} </h1>
                                 </div>
                             </div>
                             <div class="row">
-                                <p class="text-center"> {{}} </p>
+                                <p class="text-center"> {{ dato.descripcion_clima }} </p>
                             </div>
                         </div>
                     </div>
@@ -219,7 +223,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Temperatura maxima </p>
-                            <p> {{}}° </p>
+                            <p> {{ dato.temperatura_max }}° </p>
                         </div>
 
                     </div>
@@ -232,7 +236,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Temperatura minima </p>
-                            <p>{{ }}° </p>
+                            <p>{{ dato.temperatura_min}}° </p>
                         </div>
 
                     </div>
@@ -245,7 +249,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Lluvia </p>
-                            <p> {{ }} %</p>
+                            <p> {{dato.lluvia }}%</p>
                         </div>
 
                     </div>
@@ -260,7 +264,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Humedad </p>
-                            <p> {{ }}% </p>
+                            <p> {{dato.humedad}}% </p>
                         </div>
 
                     </div>
@@ -273,7 +277,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Nubes </p>
-                            <p> {{ }}% </p>
+                            <p> {{ dato.nubes}}% </p>
                         </div>
 
                     </div>
@@ -286,7 +290,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Viento </p>
-                            <p> {{ }}km/h</p>
+                            <p> {{dato.velocidad_viento }}km/h</p>
                         </div>
 
                     </div>
@@ -317,6 +321,8 @@
 
 
         <script src="../static/js/fondoMostrarClima.js"></script>
+
+        {% endfor %}
 </body>
 
 </html>
