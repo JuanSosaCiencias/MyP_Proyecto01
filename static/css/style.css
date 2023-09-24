@@ -92,7 +92,6 @@ div.opciones {
   margin: 15px 0;
   height: 55px;
   padding: 0 0.4rem;
-  /* position: relative; */
   display: flex;
 }
 
@@ -123,8 +122,6 @@ div.opciones {
 
 .lista{
   position:absolute;
-  /* margin-top: 1rem; */
-
 
 }
 
