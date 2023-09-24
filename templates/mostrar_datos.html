@@ -4,38 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web App</title>
+    <title>Clima.com</title>
 
-    <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
-    <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-    <!-- Hoja de estilos personalizada-->
     <link rel="stylesheet" href="../static/css/mostrar_clima.css">
 
-    <!-- fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@300;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="../static/img/climaPrincipal.png" type="imagen/icono">
 
 </head>
 
 <body>
 
-    <!-- Animacion sacada de la pagina Animated Backgrouns -->
+    {% for dato in datos %}
+
+    <!-- Animacion sacada de la pagina Animated Backgrouns, consultada el 20 de semptiembre-->
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs>
             <linearGradient id="bg">
-                <stop offset="0%" style="stop-color:rgba(63, 63, 66, 0.06)"></stop>
-                <stop offset="50%" style="stop-color:rgba(34, 34, 34, 0.6)"></stop>
-                <stop offset="100%" style="stop-color:rgba(0, 0, 0, 0.2)"></stop>
+                <stop offset="0%" style="stop-color:rgba(185, 208, 209, 0.795)"></stop>
+                <stop offset="50%" style="stop-color:rgba(232, 238, 241, 0.6)"></stop>
+                <stop offset="100%" style="stop-color:rgba(202, 231, 228, 0.799)"></stop>
             </linearGradient>
             <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
     s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
@@ -59,156 +65,140 @@
         </g>
     </svg>
 
-    <div class="contenedor">
+    <div class="container-fluid contenedor">
 
-        <div class="contenedor m-2 p-2" id="tabla">
+        <div class="row m-2 p-2">
 
-            <div class="fila m-2 p-2">
+            <div class="col m-5 text-center">
 
-                <div class="container m-4 p-2 text-center text-light" id="columna">
-
-                    <div class="row m-2 p-2">
-                        <div class="fs-1 text-center">
-                            Clima ciudad origen
-                        </div>
+                <div class="row m-2 p-2">
+                    <div class=" text-center">
+                        <h1 class="tituloCiudad fondoTexto"> {{ dato.nombre }} </h1>
                     </div>
-
-                    <div class="row m-2 p-2">
-                        <div class="col-4 m-2 p-2">
-                            <img src="../static/img/weather-forecast.png" id="imagenClima" alt="nubeConSol">
-                        </div>
-                        <div class="col m-2 p-2">
-                            <div class="container m-2 p-2 text-center text-light">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1> Clima </h1>
-                                    </div>
-                                    <div class="col">
-                                        <h1> 25°</h1>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <p class="text-center"> informacion </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row m-2 p-2">
-                        <div class="col m-2 p-2 d-flex justify-content-center">
-                            <p class="text.centrar"> Humedad </p>
-                        </div>
-
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> Viento </p>
-                        </div>
-
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> Tempertatura</p>
-                        </div>
-                    </div>
-
-                    <div class="row m-2 p-2">
-                        <div class="col m-2 p-2 d-flex justify-content-center">
-                            <p class="text.centrar"> Nubosidad </p>
-                        </div>
-
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> </p>
-                        </div>
-
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> 95</p>
-                        </div>
-                    </div>
-
-
                 </div>
 
-
-                <div class="container m-4 p-2 text-center text-light align-items-center" id="columna">
-
-                    <div class="row m-2 p-2">
-                        <div class="fs-1 text-center">
-                            Clima ciudad destino
-                        </div>
+                <div class="row m-2 p-2 justify-content-center">
+                    <div class="col-4 m-2 p-2 d-flex justify-content-center align-items-center">
+                        <img src="../static/img/climaPrincipal.png" class="imagenClima" alt="imagenClima"
+                            id="imgClimaOrigen">
                     </div>
-
-                    <div class="row m-2 p-2">
-                        <div class="col-4 m-2 p-2">
-                            <img src="../static/img/weather-forecast.png" id="imagenClima" alt="nubeConSol">
-                        </div>
-                        <div class="col m-2 p-2">
-                            <div class="container m-2 p-2 text-center text-light">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1> Clima </h1>
-                                    </div>
-                                    <div class="col">
-                                        <h1> 25°</h1>
-                                    </div>
+                    <div class="col m-2 p-2">
+                        <div class="container m-2 p-2 text-center">
+                            <div class="row">
+                                <div class="col">
+                                    <h1> {{ dato.clima_principal}}</h1>
                                 </div>
-                                <div class="row">
-                                    <p class="text-center"> informacion </p>
-                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="text-center"> {{ dato.descripcion_clima }} </p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="row m-2 p-2">
-                        <div class="col m-2 p-2 d-flex justify-content-center">
-                            <p class="text.centrar"> {{ dato.humedad_origen }} </p>
+                <div class="row">
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-temperature-full"></i>
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> Viento </p>
+                        <div class="texto">
+                            <p class="mb-2"> Temperatura maxima </p>
+                            <p> {{dato.temperatura_max }}°C</p>
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> Tempertatura</p>
-                        </div>
                     </div>
 
-                    <div class="row m-2 p-2">
-                        <div class="col m-2 p-2 d-flex justify-content-center">
-                            <p class="text.centrar"> Nubosidad </p>
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-temperature-empty"></i>
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> </p>
+                        <div class="texto">
+                            <p class="mb-2"> Temperatura minima </p>
+                            <p> {{dato.temperatura_min}}°C </p>
                         </div>
 
-                        <div class="col m-2 p-2">
-                            <p class="text-center"> 95</p>
-                        </div>
                     </div>
 
+                    <div class="col m-2 p-2 textoInformativo">
 
+                        <div class="icono">
+                            <i class="fa-solid fa-cloud-rain"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Lluvia </p>
+                            <p> {{dato.lluvia}}% </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Humedad </p>
+                            <p> {{ dato.humedad }}% </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Nubes</p>
+                            <p> {{dato.nubes }} %</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col m-2 p-2 textoInformativo">
+
+                        <div class="icono">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+
+                        <div class="texto">
+                            <p class="mb-2"> Viento </p>
+                            <p>{{ dato.velocidad_viento }}km/h</p>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
 
-            <div class="fila m-4 p-2">
-                <button type="submit" class="btn btn-dark btn-lg text-light fs-1"
-                    onclick="window.location.href = 'index.html'">
-                    Hacer otra consulta
-                </button>
-            </div>
 
-            <button id="botonMagico"> magia </button>
-            <button id="botonMagico2"> magia </button>
+
 
         </div>
 
+        <div class="row m-4 p-2">
+            <div class="text-center">
+                <form action="{{ url_for('index') }}" method="get">
+                    <button type="submit" class="btn btn-lg fs-1 fondoTexto">
+                        Hacer otra consulta
+                    </button>
+                </form>
+            </div>
+        </div>
 
+        <meta id="climaDestino" data-fruta="{{ dato.icono}}">
 
-
-    </div>
-
-    <script src="../static/js/fondoMostrarClima.js"></script>
-
-
-
+        <script src="../static/js/fondoMostrarClima.js"></script>
+        {% endfor %}
 </body>
 
 </html>

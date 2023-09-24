@@ -1,0 +1,31 @@
+<!-- Pagina de error obtenida de: https://github.com/tsparticles/404-templates/blob/main/space/js/404.js
+Usuario: tsParticles
+consultada: 23 de septiembre 2023 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Error 404</title>
+    <link type="text/css" rel="stylesheet" href="../../static/css/404.css" />
+    <link rel="icon" type="image/x-icon" href="../../static/img/tsParticles-64.png">
+</head>
+
+<body class="permission_denied">
+    <div id="tsparticles"></div>
+    <div class="denied__wrapper">
+        <h1>404</h1>
+        <h3>Datos no encontrados <span>SPACE</span> Introduzca un vuelo válido porfavor.</h3>
+        <img id="astronaut" src="../../static/img/astronaut.svg" />
+        <img id="planet" src="../../static/img/planet.svg" />
+        <form action="{{ url_for('index') }}" method="get">
+            <button type="submit" class="btn btn-lg fs-1 fondoTexto">
+                Hacer otra consulta
+            </button>
+        </form>
+    </div>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.4/tsparticles.bundle.min.js"></script>
+    <script type="text/javascript" src="../../static/js/404.js"></script>
+</html>

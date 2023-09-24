@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
     overflow: hidden;
     min-height: 100vh;
     position: relative;
@@ -32,20 +33,60 @@ svg {
 
     background-image: linear-gradient(to bottom, rgba(19, 18, 18, 0.86), #8d868a);
 
+=======
+    min-height: 100vh;
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(113, 201, 212, 0.86), #d2d6d6);
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+}
+
+
+/* https://stackoverflow.com/questions/15884102/bootstrap-how-do-i-change-the-width-of-the-container 
+consultado: 21 de septiemnbre*/
+@media (min-width: 1200px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+/* Animacion sacada de la pagina Animated Backgrouns 
+consultado el 20 de septiembre */
+svg {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: block;
+
+    background-image: linear-gradient(to bottom, rgba(113, 201, 212, 0.86), #d2d6d6);
+>>>>>>> back-end
 }
 
 .contenedor {
     position: absolute;
+<<<<<<< HEAD
     width: 100%;
     height: 80%;
 }
 
 #imagenClima {
+=======
+    z-index: 1;
+}
+
+.imagenClima {
+>>>>>>> back-end
     width: 100px;
     height: 100px;
 }
 
 
+<<<<<<< HEAD
 #container1 #container2 {
     flex: 1;
 }
@@ -74,4 +115,38 @@ svg {
     flex: 1;
     justify-content: center;
     align-items: center;
+=======
+.textoInformativo {
+    display: flex;
+    align-items: center;
+}
+
+.icono {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+.icono i {
+    font-size: 40px;
+}
+
+.texto {
+    flex: 1;
+    text-align: center;
+}
+
+.texto p {
+    font-size: 1.5rem;
+}
+
+
+.tituloCiudad {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.fondoTexto {
+    background-color: rgb(103, 189, 205);
+>>>>>>> back-end
 }

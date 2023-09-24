@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   overflow: hidden;
   min-height: 100vh;
   position: relative;
@@ -13,10 +14,27 @@ svg {
   top: 0;
   left: 0;
   width: 100%;
+=======
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* CSS para la animacion sacada de la pagina Animated Backgrouns: https://animatedbackgrounds.me/
+consultada el: 20 de septiembre  */
+svg {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+>>>>>>> back-end
   height: 100%;
   box-sizing: border-box;
   display: block;
 
+<<<<<<< HEAD
 
   background-color: #0e4166;
   background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
@@ -27,6 +45,10 @@ svg {
   background-image: linear-gradient(to bottom, rgba(150, 34, 34, 0.86), #630b37);
   */
 
+=======
+  background-color: #0e4166;
+  background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
+>>>>>>> back-end
 }
 
 .contenedor {
@@ -36,6 +58,7 @@ svg {
 }
 
 
+<<<<<<< HEAD
 
 .contenedorPadre {
   bottom: 30%;
@@ -52,4 +75,17 @@ docuemntar este comentario de stack overflow */
 
   display: flex;
   align-items: center;
+=======
+.centrar {
+  min-height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+>>>>>>> back-end
 }
