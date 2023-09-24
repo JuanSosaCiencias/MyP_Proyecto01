@@ -85,7 +85,7 @@ Windows:
 7. Agregar la clave de la API de OpenWeatherMap:
 
 ``` python
-     api_key = '-----' (Linea de codigo: 196, 208)
+     api_key = '-----' (Linea de codigo: 171)
 ```
 
 
