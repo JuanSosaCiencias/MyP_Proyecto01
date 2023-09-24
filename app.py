@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_mysqldb import MySQL
 import pymysql, requests
-from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
 from googletrans import Translator
 app = Flask(__name__)
