@@ -8,7 +8,7 @@ mysql = MySQL(app)
 
 app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "-----"
+app.config["MYSQL_PASSWORD"] = "------"
 app.config["MYSQL_DB"] = "data_clima"
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
 
@@ -230,7 +230,7 @@ def actualizar_ciudad_db(iata, temperatura, clima_principal, icono, descripcion_
         conexion = pymysql.connect(
             host='localhost',
             user='root',
-            password='-----',
+            password='-------',
             database='data_clima'
         )
         cursor = conexion.cursor()
@@ -287,7 +287,7 @@ def obtener_primeras_52_ciudades_desde_bd():
         conexion = pymysql.connect(
             host='localhost',
             user='root',
-            password='-----',
+            password='-------',
             database='data_clima'
         )
         cursor = conexion.cursor()

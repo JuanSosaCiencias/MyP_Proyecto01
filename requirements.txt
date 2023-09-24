@@ -9,7 +9,7 @@ colorama==0.4.4
 distlib==0.3.7
 et-xmlfile==1.1.0
 filelock==3.12.4
-Flask==2.2.5
+Flask==2.1.2
 Flask-Login==0.5.0
 Flask-MySQLdb==1.0.1
 Flask-WTF==0.15.1
@@ -19,7 +19,7 @@ h2==3.2.0
 hpack==3.0.0
 hstspreload==2023.1.1
 httpcore==0.9.1
-httpx==0.23.0
+httpx==0.13.3
 hyperframe==5.2.0
 idna==2.10
 importlib-metadata==4.12.0
@@ -43,6 +43,6 @@ toml==0.10.2
 tzlocal==5.0.1
 urllib3==2.0.4
 virtualenv==20.24.5
-Werkzeug==2.2.3
+Werkzeug==2.1.2
 WTForms==2.3.3
 zipp==3.8.0

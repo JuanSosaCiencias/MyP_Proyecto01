@@ -1,6 +1,6 @@
 /**
  * Codigo consultado de Boostrap, especificamente: https://getbootstrap.com/docs/5.3/forms/validation/
- * consultado el 21 de septiembre. 
+ * consultado el 21 de septiembre 2023. 
  */
 (() => {
     'use strict'
