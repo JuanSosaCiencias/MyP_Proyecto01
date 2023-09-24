@@ -8,8 +8,8 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-/* CSS para la animacion sacada de la pagina Animated Backgrouns: https://animatedbackgrounds.me/
-consultada el: 20 de septiembre  */
+/* CSS para la animacion consultada de la pagina Animated Backgrouns: https://animatedbackgrounds.me/
+consultada el: 20 de septiembre 2023  */
 svg {
   position: fixed;
   bottom: 0;
@@ -30,7 +30,8 @@ svg {
   height: 100%;
 }
 
-
+/* https://stackoverflow.com/questions/22196587/how-to-vertically-center-a-container-in-bootstrap 
+Consultado 20 de Septiembre 2023. Usuario: Hashm Qolami. */
 .centrar {
   min-height: 100%;
   min-height: 100vh;

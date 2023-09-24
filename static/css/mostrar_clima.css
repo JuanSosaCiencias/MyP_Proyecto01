@@ -10,14 +10,14 @@ body {
 }
 
 /* https://stackoverflow.com/questions/15884102/bootstrap-how-do-i-change-the-width-of-the-container 
-consultado: 21 de septiemnbre. Usuario GitHub: mcbjam.*/
+consultado: 21 de septiembre 2023. Usuario GitHub: mcbjam.*/
 @media (min-width: 1200px) {
     .container {
         max-width: 800px;
     }
 }
 
-/* Animacion sacada de la pagina Animated Backgrouns 
+/* Animacion consultada de la pagina Animated Backgrouns: https://animatedbackgrounds.me/
 consultado el 20 de septiembre */
 svg {
     position: fixed;
