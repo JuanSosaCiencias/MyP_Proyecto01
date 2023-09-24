@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mostrar Datos</title>
+</head>
+<body>
+    <h1>Resultados de la Búsqueda</h1>
+
+    {% if datos %}
+        <h2>Datos del Ticket o Ciudad</h2>
+        <ul>
+            {% for dato in datos %}
+                <li>
+                    <strong>iata:</strong> {{ dato.iata }}<br>
+                    <strong>nombre:</strong> {{ dato.nombre }}<br>
+                    <strong>longitud:</strong> {{ dato.longitud }}<br>
+                    <strong>latitud:</strong> {{ dato.latitud }}<br>
+                    <strong>clima_principal:</strong> {{ dato.clima_principal }}<br>
+                    <strong>icono:</strong> {{ dato.icono }}<br>
+                    <strong>descripcion_clima:</strong> {{ dato.descripcion_clima }}<br>
+                    <strong>temperatura:</strong> {{ dato.temperatura }}<br>
+                    <strong>sentimiento:</strong> {{ dato.sentimiento }}<br>
+                    <strong>temperatura_min:</strong> {{ dato.temperatura_min }}<br>
+                    <strong>temperatura_max:</strong> {{ dato.temperatura_max }}<br>
+                    <strong>humedad:</strong> {{ dato.humedad }}<br>
+                    <strong>velocidad_viento:</strong> {{ dato.velocidad_viento }}<br>
+                    <strong>angulo_viento:</strong> {{ dato.angulo_viento }}<br>
+                    <strong>lluvia:</strong> {{ dato.lluvia }}<br>
+                    <strong>nubes:</strong> {{ dato.nubes }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron datos para mostrar.</p>
+    {% endif %}
+
+</body>
+</html>
+
+
+
+
+
+
+
