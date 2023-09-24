@@ -8,8 +8,8 @@ mysql = MySQL(app)
 
 app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "m26p12c04"
-app.config["MYSQL_DB"] = "data_1"
+app.config["MYSQL_PASSWORD"] = "11julio2004"
+app.config["MYSQL_DB"] = "test2"
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
  
 @app.route("/")
@@ -107,39 +107,10 @@ def mostrar_datos():
         cursor.close()
     else:
         result = None
+    if result is None:
+        return render_template("404.html")
     return render_template("mostrar_datos.html", datos=result)
-
-def translate_text(text, target_language='es'):
-    """
-    Traduce un texto dado a un idioma objetivo utilizando el servicio de traducción.
-
-    Args:
-        text (str): El texto que se desea traducir.
-        target_language (str, opcional): El idioma al que se desea traducir el texto. Por defecto, es 'es' (español).
-
-    Returns:
-        str: El texto traducido al idioma objetivo.
-
-    Raises:
-        Exception: Se produce una excepción general si la traducción no se puede realizar.
     
-    Note:
-        Si el texto contiene la palabra "clear" (en minúsculas), se proporciona una traducción personalizada como "Despejado".
-
-    Example:
-        >>> translate_text("Hello, world!", target_language='fr')
-        'Bonjour, le monde!'
-    """
-    try:
-        translator = Translator()
-        translated_text = translator.translate(text, dest=target_language)
-        return translated_text.text
-    except Exception as e:
-        if "clear" in text.lower():
-            return "Despejado"  # Proporciona una traducción personalizada para "clear"
-        else:
-            print(f"Error al traducir: {e}")
-            return None
 
 def translate_text(text, target_language='es'):
     """
@@ -255,8 +226,8 @@ def actualizar_ciudad_db(iata, temperatura, clima_principal, icono, descripcion_
         conexion = pymysql.connect(
             host='localhost',
             user='root',
-            password='m26p12c04',
-            database='data_1'
+            password='11julio2004',
+            database='test2'
         )
         cursor = conexion.cursor()
         consulta_actualizar = """
@@ -312,8 +283,8 @@ def obtener_primeras_52_ciudades_desde_bd():
         conexion = pymysql.connect(
             host='localhost',
             user='root',
-            password='m26p12c04',
-            database='data_1'
+            password='11julio2004',
+            database='test2'
         )
         cursor = conexion.cursor()
         consulta = "SELECT * FROM ciudades LIMIT 52 "

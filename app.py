@@ -8,8 +8,8 @@ mysql = MySQL(app)
 
 app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "-----"
-app.config["MYSQL_DB"] = "data_1"
+app.config["MYSQL_PASSWORD"] = "11julio2004"
+app.config["MYSQL_DB"] = "test2"
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
  
 @app.route("/")
@@ -193,7 +193,7 @@ def actualizar_ciudades():
     for ciudad in ciudades:
         latitud = ciudad['latitud']  
         longitud = ciudad['longitud']
-        api_key = '-------'
+        api_key = 'c3e07acba8b46dc883ed33bff4b135d2'
         url = f'https://api.openweathermap.org/data/2.5/weather?lat={latitud}&lon={longitud}&appid={api_key}&units=metric'
         response = requests.get(url)
 
@@ -255,8 +255,8 @@ def actualizar_ciudad_db(iata, temperatura, clima_principal, icono, descripcion_
         conexion = pymysql.connect(
             host='localhost',
             user='root',
-            password='-----',
-            database='data_1'
+            password='11julio2004',
+            database='test2'
         )
         cursor = conexion.cursor()
         consulta_actualizar = """
@@ -312,8 +312,8 @@ def obtener_primeras_52_ciudades_desde_bd():
         conexion = pymysql.connect(
             host='localhost',
             user='root',
-            password='-----',
-            database='data_1'
+            password='11julio2004',
+            database='test2'
         )
         cursor = conexion.cursor()
         consulta = "SELECT * FROM ciudades LIMIT 52 "
