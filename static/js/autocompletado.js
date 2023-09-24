@@ -1,77 +1,74 @@
-let ciudadInputOrigen = "#ciudadInputOrigen"
-let ciudadInputDestino = "#ciudadInputDestino"
-
 let inputCiudadOrigen = "#inputCiudadOrigen"
 let inputCiudadDestino = "#inputCiudadDestino"
+
+let listaCiudadesOrigen = "#listaOrigen"
+let listaCiudadesDestino = "#listaDestino"
 
 
 
 $(document).ready(function () {
 
-    /**
-     * Implementacion de pluggin para el autocompletado en boostrap
-     * Extraido de: https://www.jqueryscript.net/form/smart-autocomplete-bootstrap.html
-     * consultado el: 22 de septiembre 
-    */
-
-
-    $(ciudadInputOrigen).on("input", function (e) {
+    $(inputCiudadOrigen).on("input", function () {
         $.ajax({
-            method: "post",
+            type: "POST",
             url: "/autocompletadorOrigen",
-            data: { text: $(ciudadInputOrigen).val() },
+            data: { text: $(inputCiudadOrigen).val() },
+            dataType: "json",
             success: function (res) {
 
-                let ciudades = [];
+                let data = "";
 
-                $.each(res, function (i, value) {
-                    ciudades.push(value.origin);
-                })
-
-                $(inputCiudadOrigen).autofill({
-                    values: ciudades,
-                    itemLimit: 3,
-                    darkMode: true,
-                    minCharacters: 1
+                $.each(res, function (i, valor) {
+                    data += "<p class='mb-0'>" + valor + "</p>"
                 });
+
+                $(listaCiudadesOrigen).html(data);
+
+                $(listaCiudadesOrigen + " p").click(function () {
+                    var selectedValue = $(this).text();
+                    $(inputCiudadOrigen).val(selectedValue);
+                    $(listaCiudadesOrigen).empty();
+                    $(listaCiudadesOrigen).hide();
+                });
+
             }
         });
     });
 
-
-    $(ciudadInputDestino).on("input", function (e) {
+    $(inputCiudadDestino).on("input", function () {
         $.ajax({
-            method: "post",
+            type: "POST",
             url: "/autocompletadorDestino",
-            data: { text: $(ciudadInputDestino).val() },
+            data: { text: $(inputCiudadDestino).val() },
+            dataType: "json",
             success: function (res) {
 
-                let ciudades = [];
+                let data = "";
 
-                $.each(res, function (i, value) {
-                    ciudades.push(value.origin);
-                })
-
-                $(inputCiudadDestino).autofill({
-                    values: ciudades,
-                    itemLimit: 8,
-                    darkMode: true,
-                    minCharacters: 1
+                $.each(res, function (i, valor) {
+                    data += "<p class='mb-0'>" + valor + "</p>"
                 });
+
+                let valor = $(inputCiudadDestino).val();
+
+                console.log(valor)
+                console.log("jajdlajs")
+
+
+                $(listaCiudadesOrigen).html(data);
+
+                console.log($(inputCiudadDestino).val())
+
+                $(listaCiudadesDestino + " p").click(function () {
+                    let selectedValue = $(this).text();
+                    $(inputCiudadDestino).val(selectedValue);
+                    $(listaCiudadesDestino).empty();
+                    $(listaCiudadesDestino).hide();
+                });
+
             }
         });
-    });
+    })
 
 });
 
-
-function mostrarMensajeError() {
-    var mensajeError = document.getElementById("mensaje-error");
-    mensajeError.style.display = "block";
-
-    setTimeout(function () {
-        mensajeError.style.display = "none";
-    }, 2000);
-}
-
-window.onload = mostrarMensajeError;

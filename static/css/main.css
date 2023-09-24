@@ -8,7 +8,8 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-/* Animacion sacada de la pagina Animated Backgrouns */
+/* CSS para la animacion sacada de la pagina Animated Backgrouns: https://animatedbackgrounds.me/
+consultada el: 20 de septiembre  */
 svg {
   position: fixed;
   bottom: 0;
@@ -19,15 +20,8 @@ svg {
   box-sizing: border-box;
   display: block;
 
-
   background-color: #0e4166;
   background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
-
-  /*
-  background-color: #580303;
-  background-image: linear-gradient(to bottom, rgba(150, 34, 34, 0.86), #630b37);
-  */
-
 }
 
 .contenedor {

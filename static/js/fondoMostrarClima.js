@@ -1,29 +1,28 @@
 
-let imagenClimaOrigen = "#imgClimaOrigen"
-let imagenClimaDestino = "#imgClimaDestino"
+const imagenClimaOrigen = "#imgClimaOrigen"
+const imagenClimaDestino = "#imgClimaDestino"
 
-let imgSoleado = "../static/img/soleado.png";
-let imgAlgoSoleado = "../static/img/algoSoleado.png";
-let imgUnaNube = "../static/img/unaNube.png";
-let imgNublado = "../static/img/nublado.png";
-let imgLluvia = "../static/img/lluvia.png";
-let imgTormenta = "../static/img/tormenta.png";
-let imgNevado = "../static/img/nevado.png";
-let imgNiebla = "../static/img/niebla.png";
+const imgSoleado = "../static/img/soleado.png";
+const imgAlgoSoleado = "../static/img/algoSoleado.png";
+const imgUnaNube = "../static/img/unaNube.png";
+const imgNublado = "../static/img/nublado.png";
+const imgLluvia = "../static/img/lluvia.png";
+const imgTormenta = "../static/img/tormenta.png";
+const imgNevado = "../static/img/nevado.png";
+const imgNiebla = "../static/img/niebla.png";
 
-let imgDefault;
+const imgDefault = "";
 
+const imgOrigen = "#imgClimaOrigen";
 
-let imgOrigen = "#imgClimaOrigen";
-
-let imgDestino = "#imgClimaDestino";
+const imgDestino = "#imgClimaDestino";
 
 
 $(document).ready(function () {
 
-    let linearGradient = $('#bg');
+    const linearGradient = $('#bg');
 
-    let soleado = {
+    const soleado = {
 
         fondoSVG: {
             "background-image": "linear-gradient(to bottom, rgba(219, 201, 111, 0.86), #c66e37)"
@@ -44,7 +43,7 @@ $(document).ready(function () {
 
     }
 
-    let unaNube = {
+    const unaNube = {
 
         fondoSVG: {
             "background-image": "linear-gradient(to bottom, rgba(113, 201, 212, 0.86), #d2d6d6)"
@@ -64,7 +63,7 @@ $(document).ready(function () {
         }
     }
 
-    let nublado = {
+    const nublado = {
 
         fondoSVG: {
             "background-image": "linear-gradient(to bottom, rgba(19, 18, 18, 0.86), #8d868a)"
@@ -84,7 +83,7 @@ $(document).ready(function () {
         }
     }
 
-    let lluvia = {
+    const lluvia = {
 
         fondoSVG: {
             "background-image": "linear-gradient(to bottom, rgba(14, 98, 182, 0.86), #7ea5b8)"
@@ -104,7 +103,7 @@ $(document).ready(function () {
         }
     }
 
-    let tormenta = {
+    const tormenta = {
 
         fondoSVG: {
             "background-image": "linear-gradient(to bottom, rgba(35, 34, 31, 0.86), #4f4747)"
@@ -126,7 +125,7 @@ $(document).ready(function () {
 
     }
 
-    let nieve = {
+    const nieve = {
 
         fondoSVG: {
             "background-image": "linear-gradient(to bottom, rgba(255, 255, 255, 0.86), #dce8ef)"
@@ -148,7 +147,7 @@ $(document).ready(function () {
 
     }
 
-    let niebla = {
+    const niebla = {
 
         fondoSVG: {
             "background-image": "linear-gradient(to bottom, rgba(193, 180, 180, 0.86), #8d868a)"
@@ -170,15 +169,48 @@ $(document).ready(function () {
     }
 
 
-    let climaOrigen = "10d";
+    let climaOrigen = "{{  }}";
 
-    let climaDestino = "50d"
-
+    let climaDestino = "{{  }}"
 
 
     $("#botonMagico1").on("click", function () {
+        climaDestino = "01d";
         ajustaEstiloPagina(climaDestino);
     });
+    $("#botonMagico2").on("click", function () {
+        climaDestino = "02d";
+        ajustaEstiloPagina(climaDestino);
+    });
+    $("#botonMagico3").on("click", function () {
+        climaDestino = "03d";
+        ajustaEstiloPagina(climaDestino);
+    });
+    $("#botonMagico4").on("click", function () {
+        climaDestino = "04d";
+        ajustaEstiloPagina(climaDestino);
+    });
+    $("#botonMagico5").on("click", function () {
+        climaDestino = "09d";
+        ajustaEstiloPagina(climaDestino);
+    });
+    $("#botonMagico6").on("click", function () {
+        climaDestino = "10d";
+        ajustaEstiloPagina(climaDestino);
+    });
+    $("#botonMagico7").on("click", function () {
+        climaDestino = "11d";
+        ajustaEstiloPagina(climaDestino);
+    });
+    $("#botonMagico8").on("click", function () {
+        climaDestino = "13d";
+        ajustaEstiloPagina(climaDestino);
+    });
+    $("#botonMagico9").on("click", function () {
+        climaDestino = "50d";
+        ajustaEstiloPagina(climaDestino);
+    });
+
 
 
     /**

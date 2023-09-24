@@ -4,38 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web App</title>
+    <title>Clima.com</title>
 
-    <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
-    <!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-    <!-- Hoja de estilos personalizada-->
     <link rel="stylesheet" href="../static/css/mostrar_clima.css">
 
-    <!-- fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!--font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-    <!-- fuentes extraidas de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@300;500;700&display=swap"
         rel="stylesheet">
+
+    <link rel="icon" href="../static/img/climaPrincipal.png" type="imagen/icono">
+
+
+    <meta id="fruta" data-fruta="{{ climaOrigen }}">
+    <meta id="fruta" data-fruta="{{ climaDestino }}">
 
 </head>
 
@@ -46,9 +41,9 @@
         width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
         <defs>
             <linearGradient id="bg">
-                <stop offset="0%" style="stop-color:rgba(62, 101, 156, 0.795)"></stop>
-                <stop offset="50%" style="stop-color:rgba(35, 68, 102, 0.6)"></stop>
-                <stop offset="100%" style="stop-color:rgba(4, 154, 199, 0.799)"></stop>
+                <stop offset="0%" style="stop-color:rgba(185, 208, 209, 0.795)"></stop>
+                <stop offset="50%" style="stop-color:rgba(232, 238, 241, 0.6)"></stop>
+                <stop offset="100%" style="stop-color:rgba(202, 231, 228, 0.799)"></stop>
             </linearGradient>
             <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
     s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
@@ -80,7 +75,7 @@
 
                 <div class="row m-2 p-2">
                     <div class=" text-center">
-                        <h1 class="tituloCiudad fondoTexto">Ciudad origen </h1>
+                        <h1 class="tituloCiudad fondoTexto"> {{ }} </h1>
                     </div>
                 </div>
 
@@ -92,11 +87,11 @@
                         <div class="container m-2 p-2 text-center">
                             <div class="row">
                                 <div class="col">
-                                    <h1> Clima Principal </h1>
+                                    <h1> {{}}</h1>
                                 </div>
                             </div>
                             <div class="row">
-                                <p class="text-center"> informacion </p>
+                                <p class="text-center"> {{}} </p>
                             </div>
                         </div>
                     </div>
@@ -111,7 +106,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Temperatura maxima </p>
-                            <p> </p>
+                            <p> {{}}°</p>
                         </div>
 
                     </div>
@@ -124,7 +119,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Temperatura minima </p>
-                            <p> </p>
+                            <p> {{}}° </p>
                         </div>
 
                     </div>
@@ -137,7 +132,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Lluvia </p>
-                            <p> </p>
+                            <p> {{}}% </p>
                         </div>
 
                     </div>
@@ -152,7 +147,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Humedad </p>
-                            <p> {{ dato[0].humedad_origen }}% </p>
+                            <p> {{ }}% </p>
                         </div>
 
                     </div>
@@ -164,8 +159,8 @@
                         </div>
 
                         <div class="texto">
-                            <p class="mb-2"> Nubosidad </p>
-                            <p> </p>
+                            <p class="mb-2"> Nubes</p>
+                            <p> {{ }} %</p>
                         </div>
 
                     </div>
@@ -178,7 +173,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Viento </p>
-                            <p> </p>
+                            <p>{{}}km/h</p>
                         </div>
 
                     </div>
@@ -191,7 +186,7 @@
 
                 <div class="row m-2 p-2">
                     <div class=" text-center">
-                        <h1 class="tituloCiudad fondoTexto">Ciudad origen </h1>
+                        <h1 class="tituloCiudad fondoTexto"> {{}}</h1>
                     </div>
                 </div>
 
@@ -203,11 +198,11 @@
                         <div class="container m-2 p-2 text-center">
                             <div class="row">
                                 <div class="col">
-                                    <h1> Clima Principal </h1>
+                                    <h1> {{}} </h1>
                                 </div>
                             </div>
                             <div class="row">
-                                <p class="text-center"> informacion </p>
+                                <p class="text-center"> {{}} </p>
                             </div>
                         </div>
                     </div>
@@ -222,7 +217,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Temperatura maxima </p>
-                            <p> </p>
+                            <p> {{}}° </p>
                         </div>
 
                     </div>
@@ -235,7 +230,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Temperatura minima </p>
-                            <p> </p>
+                            <p>{{ }}° </p>
                         </div>
 
                     </div>
@@ -248,7 +243,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Lluvia </p>
-                            <p> </p>
+                            <p> {{ }} %</p>
                         </div>
 
                     </div>
@@ -263,7 +258,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Humedad </p>
-                            <p> texto </p>
+                            <p> {{ }}% </p>
                         </div>
 
                     </div>
@@ -275,8 +270,8 @@
                         </div>
 
                         <div class="texto">
-                            <p class="mb-2"> Nubosidad </p>
-                            <p> </p>
+                            <p class="mb-2"> Nubes </p>
+                            <p> {{ }}% </p>
                         </div>
 
                     </div>
@@ -289,7 +284,7 @@
 
                         <div class="texto">
                             <p class="mb-2"> Viento </p>
-                            <p> </p>
+                            <p> {{ }}km/h</p>
                         </div>
 
                     </div>
@@ -318,16 +313,8 @@
         <button id="botonMagico8"> nevado</button>
         <button id="botonMagico9"> niebla </button>
 
-        <img src="../static/img/soleado.png" class="imagenClima" alt="imagenClima" id="imgClima">
-        ola ola
-
 
         <script src="../static/js/fondoMostrarClima.js"></script>
-
-
-
-
-
 </body>
 
 </html>
