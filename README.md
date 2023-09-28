@@ -70,7 +70,7 @@ Windows:
     $ pip install apscheduler
 ```
 
-5. Importar la base de datos `data_1.sql` desde tu BD preferida. Y nombrala data_clima.
+5. Importar la base de datos `data_1.sql` desde tu BD preferida. Y nombrala data_1.
 
 6. Configura la base de datos: 
     Desde el archivo `app.py` agrega la configuración de la base de datos:
